@@ -5,7 +5,7 @@ import { storiesOf } from '@storybook/react';
 
 const MenuItemTest = () => {
   return (
-    <Menu direction="horizontal" defaultIndex="1">
+    <Menu direction="horizontal" defaultIndex="3" sticky>
       <MenuItem>Item 1</MenuItem>
       <MenuItem>Item 2</MenuItem>
       <MenuItem disabled>Item 3</MenuItem>
@@ -28,10 +28,7 @@ const SubMenuTest = () => {
 };
 
 storiesOf('Menu', module)
-  .addDecorator((story) => {
-    return <div style={{ margin: '3rem' }}>{story()}</div>;
-  })
-  .add('MenuItem', () => {
+  .add('横向', () => {
     return MenuItemTest();
   })
   .add('SubMenu', () => {

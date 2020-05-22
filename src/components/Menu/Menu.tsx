@@ -67,7 +67,7 @@ export const MenuItem: FunctionComponent<MenuItemProps> = ({
   return useMemo(() => {
     return (
       <li
-        onClick={(e) => {
+        onClick={e => {
           e.preventDefault();
           if (!disabled) {
             dispatch(setItemActiveIndex(index!));
@@ -86,7 +86,7 @@ export const MenuItem: FunctionComponent<MenuItemProps> = ({
 interface MenuProps {
   className?: string;
   defaultIndex?: string;
-  defaultSubMenuIndex?: string;
+  defaultSubMenuIndex?: string | string[];
   direction?: 'horizontal' | 'vertical';
   sticky?: boolean;
   style?: CSSProperties;
@@ -98,8 +98,25 @@ const MenuInner: FunctionComponent<MenuProps> = ({
   direction = 'horizontal',
   sticky,
   style,
+  defaultIndex,
+  defaultSubMenuIndex,
   children,
 }) => {
+  const dispatch = useDispatch();
+
+  if (defaultIndex) {
+    dispatch(setItemActiveIndex(defaultIndex));
+  }
+
+  if (defaultSubMenuIndex) {
+    if (typeof defaultSubMenuIndex === 'string') {
+      dispatch(toggleSubMenuShowIndex(defaultSubMenuIndex));
+    } else {
+      defaultSubMenuIndex.forEach(ele => {
+        dispatch(toggleSubMenuShowIndex(ele));
+      });
+    }
+  }
   const classes = cxs(className, `${prefix}-menu`, {
     vertical: direction === 'vertical',
     horizontal: direction === 'horizontal',
@@ -118,7 +135,7 @@ const MenuInner: FunctionComponent<MenuProps> = ({
 interface SubMenuProps {
   className?: string;
   index?: string;
-  title?: ReactNode;
+  title: ReactNode;
   disabled?: boolean;
   icon?: ReactNode;
   children?: ReactNode;
@@ -137,7 +154,7 @@ export const SubMenu: FunctionComponent<SubMenuProps> = ({
   });
 
   let subMenuOpened =
-    showIndex.findIndex((element) => {
+    showIndex.findIndex(element => {
       return element === index;
     }) === -1
       ? false
@@ -156,7 +173,7 @@ export const SubMenu: FunctionComponent<SubMenuProps> = ({
       <li className={subMenuClasses}>
         <div
           className="submenu-title"
-          onClick={(e) => {
+          onClick={e => {
             e.preventDefault();
             dispatch(toggleSubMenuShowIndex(index!));
           }}
