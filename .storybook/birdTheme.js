@@ -33,5 +33,6 @@ export default create({
 
   brandTitle: 'Bird Ui Design',
   brandUrl: 'https://example.com',
-  brandImage: 'https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo48.png',
+  brandImage:
+    'https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo_with_font.png',
 });
