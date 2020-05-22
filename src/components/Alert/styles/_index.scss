@@ -1,0 +1,49 @@
+@import "./variables";
+
+@import "./mixin";
+
+.#{$prefix}-alert {
+  box-shadow: $alert-box-shadow;
+  margin: $alert-margin-y 0;
+  padding: $alert-padding-y $alert-padding-x;
+
+  font-size: $alert-font-size;
+  font-weight: $alert-font-weight;
+
+  color: $alert-font-color;
+
+  position: relative;
+
+  &.alert-success {
+    @include alert-background($success);
+  }
+
+  &.alert-info {
+    @include alert-background($info);
+  }
+
+  &.alert-warning {
+    @include alert-background($warning);
+  }
+
+  &.alert-error {
+    @include alert-background($danger);
+  }
+
+  .alert-desc {
+    color: $alert-desc-color;
+    font-size: $alert-desc-size;
+    font-weight: $alert-desc-weight;
+  }
+
+  .alert-close-btn {
+    position: absolute;
+    right: 0.3rem;
+    top: 0.3rem;
+    fill: $alert-font-color;
+  }
+
+  &.hide {
+    display: none;
+  }
+}

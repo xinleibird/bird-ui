@@ -1,0 +1,22 @@
+@import "./variable";
+
+//   .icon-#{$key} {
+//     color: $val;
+//   }
+// }
+
+.#{$prefix}-icon {
+  width: $icon-size;
+  height: $icon-size;
+  fill: $secondary;
+
+  &.icon-lg {
+    width: $icon-size-lg;
+    height: $icon-size-lg;
+  }
+
+  &.icon-sm {
+    width: $icon-size-sm;
+    height: $icon-size-sm;
+  }
+}

@@ -1,0 +1,58 @@
+html {
+  line-height: $line-height-base;
+}
+
+body {
+  background: $body-background;
+  color: $body-color;
+  text-align: $body-text-align;
+}
+
+h1 {
+  font-size: $h1-font-size;
+}
+
+pre {
+  font-family: $font-family-monospace;
+  font-size: $font-size-base;
+}
+
+a {
+  color: $link-color;
+  text-decoration: $link-decoration;
+
+  &:hover {
+    color: $link-hover-color;
+    text-decoration: $link-hover-decoration;
+  }
+}
+
+b,
+strong {
+  font-weight: $font-weight-bolder;
+}
+
+code,
+kbd,
+samp {
+  font-family: $font-family-monospace;
+  font-size: $font-size-base;
+}
+
+small {
+  font-size: $font-size-sm;
+}
+
+sub,
+sup {
+  font-size: $font-size-sm;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
