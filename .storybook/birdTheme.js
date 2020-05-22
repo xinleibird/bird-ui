@@ -13,8 +13,9 @@ export default create({
   appBorderRadius: 4,
 
   // Typography
-  fontBase: '"Open Sans", sans-serif',
-  fontCode: 'monospace',
+  fontBase: `-apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+  "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif`,
+  fontCode: `source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace`,
 
   // Text colors
   textColor: 'black',
@@ -33,6 +34,5 @@ export default create({
 
   brandTitle: 'Bird Ui Design',
   brandUrl: 'https://example.com',
-  brandImage:
-    'https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo_with_font.png',
+  brandImage: 'https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo180.png',
 });
