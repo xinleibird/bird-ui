@@ -33,6 +33,6 @@ export default create({
   inputBorderRadius: 4,
 
   brandTitle: 'Bird Ui Design',
-  brandUrl: 'https://example.com',
+  brandUrl: 'https://github.com/xinleibird/bird-ui',
   brandImage: 'https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo180.png',
 });
