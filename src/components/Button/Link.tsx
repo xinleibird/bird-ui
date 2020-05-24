@@ -1,7 +1,6 @@
 import cxs from 'classnames';
 import React, { AnchorHTMLAttributes, FunctionComponent, ReactNode, useMemo } from 'react';
 import prefix from '../prefix';
-import './Button.scss';
 
 interface BaseLinkProps {
   size?: 'large' | 'small';

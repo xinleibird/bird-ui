@@ -1,5 +1,4 @@
 import { AnchorHTMLAttributes, FunctionComponent, ReactNode } from 'react';
-import './Button.scss';
 interface BaseLinkProps {
     size?: 'large' | 'small';
     children?: ReactNode;

@@ -23,7 +23,6 @@ var __rest = (this && this.__rest) || function (s, e) {
 import cxs from 'classnames';
 import React, { useMemo } from 'react';
 import prefix from '../prefix';
-import './Button.scss';
 var Link = function (_a) {
     var className = _a.className, size = _a.size, children = _a.children, _b = _a.disabled, disabled = _b === void 0 ? false : _b, restProps = __rest(_a, ["className", "size", "children", "disabled"]);
     var classes = cxs(className, prefix + "-btn", 'link', {
