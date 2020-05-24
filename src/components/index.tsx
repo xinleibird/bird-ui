@@ -4,7 +4,7 @@ import * as Icon from './Icon';
 import Menu from './Menu';
 import Transition from './Transition';
 
-import '../styles';
+import '../styles/index.scss';
 
 export const prefix = 'bird-ui';
 
