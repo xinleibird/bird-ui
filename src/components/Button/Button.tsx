@@ -7,14 +7,13 @@ import React, {
   useState,
 } from 'react';
 import { IconCircleNotch } from '../Icon';
-import { prefix } from '../index';
+import prefix from '../prefix';
 import Transition from '../Transition';
-import './Button.scss';
 
 interface SetLoadingStateCallback {
   (loadingState: boolean): void;
 }
-export interface BaseButtonProps {
+interface BaseButtonProps {
   size?: 'large' | 'small';
   btnType?: 'primary' | 'secondary' | 'danger';
   children?: ReactNode;
@@ -24,7 +23,7 @@ export interface BaseButtonProps {
   onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
 }
 
-type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
 
 const Button: FunctionComponent<ButtonProps> = ({
   className,
@@ -54,10 +53,10 @@ const Button: FunctionComponent<ButtonProps> = ({
         disabled={disabled || isLoading}
         type={type}
         {...restProps}
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           onBtnClick();
-          return new Promise(resolve => {
+          return new Promise((resolve) => {
             resolve(onLoading(setLoading));
           });
         }}
@@ -69,7 +68,6 @@ const Button: FunctionComponent<ButtonProps> = ({
       </button>
     );
   }, [children, classes, disabled, restProps, type, size, isLoading, onLoading, onBtnClick]);
-
 };
 
 export default Button;

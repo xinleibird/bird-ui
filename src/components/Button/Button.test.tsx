@@ -3,7 +3,8 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import Button, { Link } from './index';
+import Button from './index';
+const { Link } = Button;
 
 describe('test Button component', () => {
   it('<Button> should be render by default', () => {
@@ -18,7 +19,7 @@ describe('test Button component', () => {
 
   const clickFn = jest.fn();
   it('<Button> onclick event', () => {
-    render(<Button onClick={clickFn}>Button Default</Button>);
+    render(<Button onBtnClick={clickFn}>Button Default</Button>);
     fireEvent.click(screen.getByRole('button'));
     expect(clickFn).toHaveBeenCalled();
   });

@@ -1,9 +1,8 @@
 import cxs from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, FunctionComponent } from 'react';
 import { IconClose, IconError, IconInfo, IconSuccess, IconWarning } from '../Icon';
-import { prefix } from '../index';
+import prefix from '../prefix';
 import Transition from '../Transition';
-import './Alert.scss';
 
 interface AlertProps {
   className?: string;
@@ -15,7 +14,7 @@ interface AlertProps {
   onClose?: () => void;
 }
 
-const Alert = ({
+const Alert: FunctionComponent<AlertProps> = ({
   className,
   message,
   description,
@@ -23,7 +22,7 @@ const Alert = ({
   closeable,
   banner = false,
   onClose,
-}: AlertProps) => {
+}) => {
   const [couldShow, setShow] = useState(true);
 
   const classes = cxs(className, `${prefix}-alert`, {
@@ -65,7 +64,7 @@ const Alert = ({
                 onClose && onClose();
                 setShow(false);
               }}
-              data-testid="close-btn"
+              data-testid="alert-close-btn"
             />
           )}
           {message}

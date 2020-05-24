@@ -1,7 +1,6 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, SVGProps } from 'react';
-import { prefix } from '../index';
-import './Icon.scss';
+import prefix from '../prefix';
 
 export interface BaseIconProps {
   className?: string;

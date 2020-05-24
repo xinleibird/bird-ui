@@ -3,7 +3,9 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import Menu, { SubMenu, MenuItem } from './Menu';
+import Menu from './index';
+
+const { MenuItem, SubMenu } = Menu;
 
 describe('test Menu component', () => {
   it('test <Menu> <SubMenu> <MenuItem> should be render by default', () => {

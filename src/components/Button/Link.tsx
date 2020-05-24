@@ -1,6 +1,6 @@
 import cxs from 'classnames';
 import React, { AnchorHTMLAttributes, FunctionComponent, ReactNode, useMemo } from 'react';
-import { prefix } from '../index';
+import prefix from '../prefix';
 import './Button.scss';
 
 interface BaseLinkProps {
@@ -9,7 +9,7 @@ interface BaseLinkProps {
   disabled?: boolean;
 }
 
-type LinkProps = Partial<AnchorHTMLAttributes<HTMLElement> & BaseLinkProps>;
+export type LinkProps = Partial<AnchorHTMLAttributes<HTMLElement> & BaseLinkProps>;
 
 const Link: FunctionComponent<LinkProps> = ({
   className,
