@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import Button, { Link } from './Button';
+import Button, { Link } from './index';
 
 describe('test Button component', () => {
   it('<Button> should be render by default', () => {
