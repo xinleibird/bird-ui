@@ -19,4 +19,8 @@
     width: $icon-size-sm;
     height: $icon-size-sm;
   }
+
+  &.animate-spin {
+    @include animate-spin;
+  }
 }

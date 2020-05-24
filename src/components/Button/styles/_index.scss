@@ -42,12 +42,33 @@
     }
   }
 
+  &.loading {
+    cursor: default;
+    opacity: $btn-loading-opacity;
+    color: $gray-50;
+    text-decoration: none;
+    box-shadow: none;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
   &:focus {
     outline: 0;
     border-color: $primary;
   }
 
   @include btn-style($body-color, $primary, $primary, null, null);
+
+  .btn-inner-text {
+    vertical-align: text-bottom;
+  }
+
+  .bird-ui-icon {
+    margin-right: 0.7rem;
+    fill: $secondary;
+  }
 }
 
 .btn-lg {
@@ -74,6 +95,13 @@
 
 .btn-primary {
   @include btn-style($white, darken($white, 10%), $primary, $primary, darken($primary, 10%));
+  .bird-ui-icon {
+    fill: darken($white, 10%);
+  }
+
+  &.loading {
+    color: $gray-10;
+  }
 }
 
 .btn-secondary {
@@ -84,10 +112,25 @@
     $secondary,
     darken($secondary, 10%)
   );
+
+  .bird-ui-icon {
+    fill: darken($white, 10%);
+  }
+
+  &.loading {
+    color: $gray-10;
+  }
 }
 
 .btn-danger {
   @include btn-style($white, darken($white, 10%), $danger, $danger, darken($danger, 10%));
+  .bird-ui-icon {
+    fill: darken($white, 10%);
+  }
+
+  &.loading {
+    color: $gray-10;
+  }
 }
 
 .link {

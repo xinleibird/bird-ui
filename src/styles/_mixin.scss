@@ -1,1 +1,11 @@
-//
+@mixin animate-spin {
+  animation: spin 2000ms infinite linear;
+}
+
+@mixin animate-beat {
+  animation: 1200ms ease 0s infinite beat;
+}
+
+@mixin animate-linear {
+  transition: all 300ms linear;
+}

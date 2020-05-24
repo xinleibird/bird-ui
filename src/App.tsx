@@ -1,17 +1,44 @@
 import React from 'react';
 import Alert from './components/Alert';
 import Button, { Link } from './components/Button';
-import { IconAngleDown, IconSetting, IconTable } from './components/Icon';
+import { IconAngleDown, IconSetting, IconTable, IconCircleNotch } from './components/Icon';
 import Menu, { MenuItem, SubMenu } from './components/Menu';
 
 function App() {
   return (
     <>
-      <Button>Default</Button>
-      <Button btnType="primary">Primary</Button>
-      <Button btnType="secondary">Secondary</Button>
+      <Button
+        onClick={() => {
+          console.log('hello');
+        }}
+        onLoading={async (setLoading) => {
+          setLoading(true);
+          const res = await fetch('https://dog.ceo/api/breeds/image/random');
+          const json = await res.json();
+          console.log(json);
+          setLoading(false);
+        }}
+      >
+        Default
+      </Button>
+      <Button
+        btnType="primary"
+        onLoading={async (setLoading) => {
+          setLoading(true);
+          setTimeout(() => {
+            setLoading(false);
+          }, 3000);
+        }}
+      >
+        Primary
+      </Button>
+      <Button btnType="secondary" loading>
+        Secondary
+      </Button>
       <Button btnType="danger">Danger</Button>
-      <Link>Link</Link>
+      <Link href="http://www.baidu.com" target="_blank">
+        Link
+      </Link>
       <br />
       <Button disabled>Default</Button>
       <Button disabled btnType="primary">
@@ -25,7 +52,9 @@ function App() {
       </Button>
       <Link disabled>Link</Link>
       <br />
-      <Button size="small">Default</Button>
+      <Button size="small" loading>
+        Default
+      </Button>
       <Button size="small" btnType="primary">
         Primary
       </Button>
@@ -53,7 +82,9 @@ function App() {
         Link
       </Link>
       <br />
-      <Button size="large">Default</Button>
+      <Button size="large" loading>
+        Default
+      </Button>
       <Button size="large" btnType="primary">
         Primary
       </Button>
@@ -152,7 +183,8 @@ function App() {
       <Alert message="注意，成功了" description="hehf" type="warning" />
       <Alert message="注意，成功了" description="hehf" type="error" />
       <br />
-      <IconAngleDown size="small" />
+      <IconAngleDown animate="spin" />
+      <IconCircleNotch animate="spin" />
     </>
   );
 }

@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
-import { IconAngleDown, IconAngleRight } from '../Icon';
+import { IconAngleRight } from '../Icon';
 import { prefix } from '../index';
 import Transition from '../Transition';
 import './Menu.scss';
@@ -159,10 +159,14 @@ export const SubMenu: FunctionComponent<SubMenuProps> = ({
     }) === -1
       ? false
       : true;
+
   const subMenuClasses = cxs(className, 'menu-item', 'submenu', {
     disabled,
   });
   const subMenuChildrenClasses = cxs('submenu-item');
+  const menuIconDrawer = cxs('menu-icon-drawer', {
+    'rotate-90': subMenuOpened,
+  });
 
   const dispatch = useDispatch();
 
@@ -180,11 +184,7 @@ export const SubMenu: FunctionComponent<SubMenuProps> = ({
         >
           {icon}
           {title}
-          {subMenuOpened ? (
-            <IconAngleDown className="menu-icon-drawer" />
-          ) : (
-            <IconAngleRight className="menu-icon-drawer" />
-          )}
+          <IconAngleRight className={menuIconDrawer} />
         </div>
         <Transition in={subMenuOpened}>
           <ul className={subMenuChildrenClasses}>{rendered}</ul>
@@ -192,14 +192,15 @@ export const SubMenu: FunctionComponent<SubMenuProps> = ({
       </li>
     );
   }, [
-    dispatch,
-    icon,
-    index,
-    rendered,
-    subMenuChildrenClasses,
     subMenuClasses,
+    icon,
     title,
+    menuIconDrawer,
     subMenuOpened,
+    subMenuChildrenClasses,
+    rendered,
+    dispatch,
+    index,
   ]);
 };
 

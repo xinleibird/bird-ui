@@ -106,6 +106,11 @@
 
       .menu-icon-drawer {
         fill: $gray-30;
+        @include animate-linear;
+
+        &.rotate-90 {
+          transform: rotate(90deg);
+        }
       }
     }
 
@@ -126,6 +131,7 @@
 
     &:hover:not(.disabled) {
       background: lighten($primary, 15%);
+      @include animate-beat;
     }
 
     &:active:not(.disabled) {

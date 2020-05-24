@@ -14,6 +14,8 @@
 
   position: relative;
 
+  display: flex;
+
   &.alert-success {
     @include alert-background($success);
   }
@@ -34,6 +36,7 @@
     color: $alert-desc-color;
     font-size: $alert-desc-size;
     font-weight: $alert-desc-weight;
+    margin-top: 0.5rem;
   }
 
   .alert-close-btn {
@@ -43,7 +46,27 @@
     fill: $alert-font-color;
   }
 
-  &.hide {
-    display: none;
+  .alert-icon-success {
+    fill: darken($success, 25%);
+    margin-top: 0.3rem;
+  }
+
+  .alert-icon-info {
+    fill: darken($info, 25%);
+    margin-top: 0.3rem;
+  }
+
+  .alert-icon-warning {
+    fill: darken($warning, 25%);
+    margin-top: 0.3rem;
+  }
+
+  .alert-icon-error {
+    fill: darken($danger, 25%);
+    margin-top: 0.3rem;
+  }
+
+  .alert-message-wrapper {
+    margin-left: 1rem;
   }
 }
