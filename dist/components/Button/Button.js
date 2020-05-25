@@ -27,10 +27,8 @@ import prefix from '../prefix';
 import Transition from '../Transition';
 var Button = function (_a) {
     var _b;
-    var className = _a.className, size = _a.size, btnType = _a.btnType, children = _a.children, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.type, type = _d === void 0 ? 'button' : _d, loading = _a.loading, _e = _a.onBtnClick, onBtnClick = _e === void 0 ? function () { } : _e, 
-    // onLoading = () => {},
-    restProps = __rest(_a, ["className", "size", "btnType", "children", "disabled", "type", "loading", "onBtnClick"]);
-    var _f = useState(loading), isLoading = _f[0], setLoading = _f[1];
+    var className = _a.className, size = _a.size, btnType = _a.btnType, children = _a.children, _c = _a.disabled, disabled = _c === void 0 ? false : _c, _d = _a.type, type = _d === void 0 ? 'button' : _d, loading = _a.loading, _e = _a.onBtnClick, onBtnClick = _e === void 0 ? function () { } : _e, _f = _a.onLoading, onLoading = _f === void 0 ? function () { } : _f, restProps = __rest(_a, ["className", "size", "btnType", "children", "disabled", "type", "loading", "onBtnClick", "onLoading"]);
+    var _g = useState(loading), isLoading = _g[0], setLoading = _g[1];
     var classes = cxs(className, prefix + "-btn", (_b = {
             'btn-lg': size === 'large',
             'btn-sm': size === 'small'
@@ -42,14 +40,14 @@ var Button = function (_a) {
         return (React.createElement("button", __assign({ className: classes, disabled: disabled || isLoading, type: type }, restProps, { onClick: function (e) {
                 e.preventDefault();
                 onBtnClick();
-                // return new Promise((resolve) => {
-                //   resolve(onLoading(setLoading));
-                // });
+                return new Promise(function (resolve) {
+                    resolve(onLoading(setLoading));
+                });
             } }),
             React.createElement(Transition, { in: isLoading, animationClassName: "fade-in" },
                 React.createElement(Icon.CircleNotch, { animate: "spin", size: size })),
             React.createElement("span", { className: "btn-inner-text" }, children)));
-    }, [children, classes, disabled, restProps, type, size, isLoading, onBtnClick]);
+    }, [classes, disabled, isLoading, type, restProps, size, children, onBtnClick, onLoading]);
 };
 export default Button;
 //# sourceMappingURL=Button.js.map

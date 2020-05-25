@@ -1,4 +1,7 @@
 import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react';
+interface SetLoadingStateCallback {
+    (loadingState: boolean): void;
+}
 interface BaseButtonProps {
     size?: 'large' | 'small';
     btnType?: 'primary' | 'secondary' | 'danger';
@@ -6,6 +9,7 @@ interface BaseButtonProps {
     disabled?: boolean;
     loading?: boolean;
     onBtnClick?: () => void;
+    onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
 }
 export declare type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
 declare const Button: FunctionComponent<ButtonProps>;

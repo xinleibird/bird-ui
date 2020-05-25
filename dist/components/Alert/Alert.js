@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
@@ -29,16 +29,18 @@ var Alert = function (_a) {
             alertIcon = React.createElement(Success, { className: "alert-icon-success" });
             break;
     }
-    return (React.createElement(Transition, { in: couldShow },
-        React.createElement("div", { className: classes },
-            alertIcon,
-            React.createElement("div", { className: "alert-message-wrapper" },
-                closeable && (React.createElement(Icon.Close, { className: "alert-close-btn", onClick: function () {
-                        onClose && onClose();
-                        setShow(false);
-                    }, "data-testid": "alert-close-btn" })),
-                message,
-                description && React.createElement("div", { className: "alert-desc" }, description)))));
+    return useMemo(function () {
+        return (React.createElement(Transition, { in: couldShow },
+            React.createElement("div", { className: classes },
+                alertIcon,
+                React.createElement("div", { className: "alert-message-wrapper" },
+                    closeable && (React.createElement(Icon.Close, { className: "alert-close-btn", onClick: function () {
+                            onClose && onClose();
+                            setShow(false);
+                        }, "data-testid": "alert-close-btn" })),
+                    message,
+                    description && React.createElement("div", { className: "alert-desc" }, description)))));
+    }, [alertIcon, classes, closeable, couldShow, description, message, onClose]);
 };
 export default Alert;
 //# sourceMappingURL=Alert.js.map
