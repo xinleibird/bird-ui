@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { useState, FunctionComponent } from 'react';
+import React, { useState, FunctionComponent, useMemo } from 'react';
 import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
@@ -30,7 +30,7 @@ const Alert: FunctionComponent<AlertProps> = ({
   const classes = cxs(className, `${prefix}-alert`, {
     [`alert-${type}`]: type,
   });
-  let alertIcon;
+  let alertIcon: {} | null | undefined;
 
   switch (type) {
     case 'success':
@@ -54,27 +54,29 @@ const Alert: FunctionComponent<AlertProps> = ({
       break;
   }
 
-  return (
-    <Transition in={couldShow}>
-      <div className={classes}>
-        {alertIcon}
-        <div className="alert-message-wrapper">
-          {closeable && (
-            <Icon.Close
-              className="alert-close-btn"
-              onClick={() => {
-                onClose && onClose();
-                setShow(false);
-              }}
-              data-testid="alert-close-btn"
-            />
-          )}
-          {message}
-          {description && <div className="alert-desc">{description}</div>}
+  return useMemo(() => {
+    return (
+      <Transition in={couldShow}>
+        <div className={classes}>
+          {alertIcon}
+          <div className="alert-message-wrapper">
+            {closeable && (
+              <Icon.Close
+                className="alert-close-btn"
+                onClick={() => {
+                  onClose && onClose();
+                  setShow(false);
+                }}
+                data-testid="alert-close-btn"
+              />
+            )}
+            {message}
+            {description && <div className="alert-desc">{description}</div>}
+          </div>
         </div>
-      </div>
-    </Transition>
-  );
+      </Transition>
+    );
+  }, [alertIcon, classes, closeable, couldShow, description, message, onClose]);
 };
 
 export default Alert;

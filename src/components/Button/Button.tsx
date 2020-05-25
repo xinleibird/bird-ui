@@ -20,7 +20,7 @@ interface BaseButtonProps {
   disabled?: boolean;
   loading?: boolean;
   onBtnClick?: () => void;
-  // onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
+  onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
 }
 
 export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
@@ -34,7 +34,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   type = 'button',
   loading,
   onBtnClick = () => {},
-  // onLoading = () => {},
+  onLoading = () => {},
   ...restProps
 }) => {
   const [isLoading, setLoading] = useState(loading);
@@ -56,9 +56,9 @@ const Button: FunctionComponent<ButtonProps> = ({
         onClick={(e) => {
           e.preventDefault();
           onBtnClick();
-          // return new Promise((resolve) => {
-          //   resolve(onLoading(setLoading));
-          // });
+          return new Promise((resolve) => {
+            resolve(onLoading(setLoading));
+          });
         }}
       >
         <Transition in={isLoading} animationClassName="fade-in">
@@ -67,7 +67,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         <span className="btn-inner-text">{children}</span>
       </button>
     );
-  }, [children, classes, disabled, restProps, type, size, isLoading, onBtnClick]);
+  }, [classes, disabled, isLoading, type, restProps, size, children, onBtnClick, onLoading]);
 };
 
 export default Button;
