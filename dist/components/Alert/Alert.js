@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
+var Success = Icon.Success, Info = Icon.Info, Warning = Icon.Warning, Error = Icon.Error;
 var Alert = function (_a) {
     var _b;
     var className = _a.className, message = _a.message, description = _a.description, _c = _a.type, type = _c === void 0 ? 'success' : _c, closeable = _a.closeable, _d = _a.banner, banner = _d === void 0 ? false : _d, onClose = _a.onClose;
@@ -13,19 +14,19 @@ var Alert = function (_a) {
     var alertIcon;
     switch (type) {
         case 'success':
-            alertIcon = React.createElement(Icon.Success, { className: "alert-icon-success" });
+            alertIcon = React.createElement(Success, { className: "alert-icon-success" });
             break;
         case 'info':
-            alertIcon = React.createElement(Icon.Info, { className: "alert-icon-info" });
+            alertIcon = React.createElement(Info, { className: "alert-icon-info" });
             break;
         case 'warning':
-            alertIcon = React.createElement(Icon.Warning, { className: "alert-icon-warning" });
+            alertIcon = React.createElement(Warning, { className: "alert-icon-warning" });
             break;
         case 'error':
-            alertIcon = React.createElement(Icon.Error, { className: "alert-icon-error" });
+            alertIcon = React.createElement(Error, { className: "alert-icon-error" });
             break;
         default:
-            alertIcon = React.createElement(Icon.Success, { className: "alert-icon-success" });
+            alertIcon = React.createElement(Success, { className: "alert-icon-success" });
             break;
     }
     return (React.createElement(Transition, { in: couldShow },

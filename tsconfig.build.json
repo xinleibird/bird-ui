@@ -7,8 +7,7 @@
     "jsx": "react",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "newLine": "lf"
+    "sourceMap": true
   },
   "include": ["src"],
   "exclude": ["src/**/*.test.tsx", "src/**/*.stories.tsx"]
