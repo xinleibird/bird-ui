@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import cxs from 'classnames';
 import React, { useMemo, useState, } from 'react';
-import { IconCircleNotch } from '../Icon';
+import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 var Button = function (_a) {
@@ -45,7 +45,7 @@ var Button = function (_a) {
                 });
             } }),
             React.createElement(Transition, { in: isLoading, animationClassName: "fade-in" },
-                React.createElement(IconCircleNotch, { animate: "spin", size: size })),
+                React.createElement(Icon.CircleNotch, { animate: "spin", size: size })),
             React.createElement("span", { className: "btn-inner-text" }, children)));
     }, [children, classes, disabled, restProps, type, size, isLoading, onLoading, onBtnClick]);
 };

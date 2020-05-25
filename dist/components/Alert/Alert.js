@@ -1,6 +1,6 @@
 import cxs from 'classnames';
 import React, { useState } from 'react';
-import { IconClose, IconError, IconInfo, IconSuccess, IconWarning } from '../Icon';
+import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 var Alert = function (_a) {
@@ -13,26 +13,26 @@ var Alert = function (_a) {
     var alertIcon;
     switch (type) {
         case 'success':
-            alertIcon = React.createElement(IconSuccess, { className: "alert-icon-success" });
+            alertIcon = React.createElement(Icon.Success, { className: "alert-icon-success" });
             break;
         case 'info':
-            alertIcon = React.createElement(IconInfo, { className: "alert-icon-info" });
+            alertIcon = React.createElement(Icon.Info, { className: "alert-icon-info" });
             break;
         case 'warning':
-            alertIcon = React.createElement(IconWarning, { className: "alert-icon-warning" });
+            alertIcon = React.createElement(Icon.Warning, { className: "alert-icon-warning" });
             break;
         case 'error':
-            alertIcon = React.createElement(IconError, { className: "alert-icon-error" });
+            alertIcon = React.createElement(Icon.Error, { className: "alert-icon-error" });
             break;
         default:
-            alertIcon = React.createElement(IconSuccess, { className: "alert-icon-success" });
+            alertIcon = React.createElement(Icon.Success, { className: "alert-icon-success" });
             break;
     }
     return (React.createElement(Transition, { in: couldShow },
         React.createElement("div", { className: classes },
             alertIcon,
             React.createElement("div", { className: "alert-message-wrapper" },
-                closeable && (React.createElement(IconClose, { className: "alert-close-btn", onClick: function () {
+                closeable && (React.createElement(Icon.Close, { className: "alert-close-btn", onClick: function () {
                         onClose && onClose();
                         setShow(false);
                     }, "data-testid": "alert-close-btn" })),

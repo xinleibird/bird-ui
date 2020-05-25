@@ -1,11 +1,17 @@
-export { default as IconAngleDown } from './icons/IconAngleDown';
-export { default as IconAngleRight } from './icons/IconAngleRight';
-export { default as IconClose } from './icons/IconClose';
-export { default as IconSetting } from './icons/IconSetting';
-export { default as IconTable } from './icons/IconTable';
-export { default as IconSlider } from './icons/IconSlider';
-export { default as IconInfo } from './icons/IconInfo';
-export { default as IconError } from './icons/IconError';
-export { default as IconWarning } from './icons/IconWarning';
-export { default as IconSuccess } from './icons/IconSuccess';
-export { default as IconCircleNotch } from './icons/IconCircleNotch';
+import { FunctionComponent } from 'react';
+import { IconProps } from './Icon';
+export declare type IconComponent = FunctionComponent<IconProps> & {
+    AngleDown: FunctionComponent<IconProps>;
+    AngleRight: FunctionComponent<IconProps>;
+    Close: FunctionComponent<IconProps>;
+    Setting: FunctionComponent<IconProps>;
+    Table: FunctionComponent<IconProps>;
+    Slider: FunctionComponent<IconProps>;
+    Info: FunctionComponent<IconProps>;
+    Error: FunctionComponent<IconProps>;
+    Warning: FunctionComponent<IconProps>;
+    Success: FunctionComponent<IconProps>;
+    CircleNotch: FunctionComponent<IconProps>;
+};
+declare const ReferIcon: IconComponent;
+export default ReferIcon;

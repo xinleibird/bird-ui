@@ -1,7 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, ReactNode, useMemo } from 'react';
 import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
-import { IconAngleRight } from '../Icon';
+import Icon from '../Icon';
 import Transition from '../Transition';
 import { renderChildren } from './Menu';
 import { toggleSubMenuShowIndex } from './store/actions';
@@ -58,7 +58,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
         >
           {icon}
           {title}
-          <IconAngleRight className={menuIconDrawer} />
+          <Icon.AngleRight className={menuIconDrawer} />
         </div>
         <Transition in={subMenuOpened}>
           <ul className={subMenuChildrenClasses}>{rendered}</ul>

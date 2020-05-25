@@ -6,7 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import { IconCircleNotch } from '../Icon';
+import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 
@@ -62,7 +62,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         }}
       >
         <Transition in={isLoading} animationClassName="fade-in">
-          <IconCircleNotch animate="spin" size={size} />
+          <Icon.CircleNotch animate="spin" size={size} />
         </Transition>
         <span className="btn-inner-text">{children}</span>
       </button>

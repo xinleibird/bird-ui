@@ -1,7 +1,7 @@
 import cxs from 'classnames';
 import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { IconAngleRight } from '../Icon';
+import Icon from '../Icon';
 import Transition from '../Transition';
 import { renderChildren } from './Menu';
 import { toggleSubMenuShowIndex } from './store/actions';
@@ -32,7 +32,7 @@ var SubMenu = function (_a) {
                 } },
                 icon,
                 title,
-                React.createElement(IconAngleRight, { className: menuIconDrawer })),
+                React.createElement(Icon.AngleRight, { className: menuIconDrawer })),
             React.createElement(Transition, { in: subMenuOpened },
                 React.createElement("ul", { className: subMenuChildrenClasses }, rendered))));
     }, [

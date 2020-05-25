@@ -1,6 +1,6 @@
 import cxs from 'classnames';
 import React, { useState, FunctionComponent } from 'react';
-import { IconClose, IconError, IconInfo, IconSuccess, IconWarning } from '../Icon';
+import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 
@@ -32,23 +32,23 @@ const Alert: FunctionComponent<AlertProps> = ({
 
   switch (type) {
     case 'success':
-      alertIcon = <IconSuccess className="alert-icon-success" />;
+      alertIcon = <Icon.Success className="alert-icon-success" />;
       break;
 
     case 'info':
-      alertIcon = <IconInfo className="alert-icon-info" />;
+      alertIcon = <Icon.Info className="alert-icon-info" />;
       break;
 
     case 'warning':
-      alertIcon = <IconWarning className="alert-icon-warning" />;
+      alertIcon = <Icon.Warning className="alert-icon-warning" />;
       break;
 
     case 'error':
-      alertIcon = <IconError className="alert-icon-error" />;
+      alertIcon = <Icon.Error className="alert-icon-error" />;
       break;
 
     default:
-      alertIcon = <IconSuccess className="alert-icon-success" />;
+      alertIcon = <Icon.Success className="alert-icon-success" />;
       break;
   }
 
@@ -58,7 +58,7 @@ const Alert: FunctionComponent<AlertProps> = ({
         {alertIcon}
         <div className="alert-message-wrapper">
           {closeable && (
-            <IconClose
+            <Icon.Close
               className="alert-close-btn"
               onClick={() => {
                 onClose && onClose();
