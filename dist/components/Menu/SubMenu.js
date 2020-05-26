@@ -15,8 +15,9 @@ var SubMenu = function (_a) {
     }) === -1
         ? false
         : true;
-    var subMenuClasses = cxs(className, 'menu-item', 'submenu', {
+    var subMenuClasses = cxs(className, 'submenu', {
         disabled: disabled,
+        opened: subMenuOpened,
     });
     var subMenuChildrenClasses = cxs('submenu-item');
     var menuIconDrawer = cxs('menu-icon-drawer', {

@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import * as serviceWorker from './serviceWorker';
+import ShowComponents from './ShowComponents';
 import './styles/index.scss';
-import Alert from './components/Alert';
 var App = function () {
-    return React.createElement(Alert, { message: "Message", description: "This is description" });
+    return React.createElement(ShowComponents, null);
 };
 ReactDOM.render(React.createElement(App, null), document.getElementById('root'));
 // If you want your app to work offline and load faster, you can change
