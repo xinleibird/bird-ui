@@ -22,10 +22,10 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from 'react';
 import Icon from '../Icon';
-import { ReactComponent as Svg } from './assets/info.svg';
-var IncoInfo = function (_a) {
+import svg from './assets/info.svg';
+var IconInfo = function (_a) {
     var restProps = __rest(_a, []);
-    return React.createElement(Icon, __assign({ component: Svg }, restProps));
+    return React.createElement(Icon, __assign({ src: svg }, restProps));
 };
-export default IncoInfo;
+export default IconInfo;
 //# sourceMappingURL=IconInfo.js.map

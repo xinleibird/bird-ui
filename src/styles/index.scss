@@ -1,6 +1,6 @@
 $prefix: "bird-ui";
 
-// @import-normalize;
+@import "normalize";
 
 @import "variables";
 
@@ -8,14 +8,14 @@ $prefix: "bird-ui";
 
 @import "mixin";
 
-@import "animation";
+@import "keyframes";
 
-@import "../components/Alert/styles/index";
+@import "../components/Alert/Alert";
 
-@import "../components/Button/styles/index";
+@import "../components/Button/Button";
 
-@import "../components/Icon/styles/index";
+@import "../components/Icon/Icon";
 
-@import "../components/Menu/styles/index";
+@import "../components/Menu/Menu";
 
-@import "../components/Transition/styles/index";
+@import "../components/Transition/Transition";

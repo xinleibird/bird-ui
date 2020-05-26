@@ -1,19 +1,20 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, SVGProps } from 'react';
+import React, { FunctionComponent } from 'react';
+import SVG, { IProps as SVGProps } from 'react-inlinesvg';
 import prefix from '../prefix';
 
 export interface BaseIconProps {
   className?: string;
-  component?: FunctionComponent<SVGProps<SVGSVGElement>>;
+  src: string;
   size?: 'large' | 'small';
   animate?: 'spin' | 'beat';
 }
 
-export type IconProps = Partial<SVGProps<SVGSVGElement> & BaseIconProps>;
+export type IconProps = Partial<SVGProps & BaseIconProps>;
 
 const Icon: FunctionComponent<IconProps> = ({
   className,
-  component,
+  src = '',
   size,
   animate,
   ...restArgs
@@ -23,9 +24,8 @@ const Icon: FunctionComponent<IconProps> = ({
     'icon-sm': size === 'small',
     [`animate-${animate}`]: animate,
   });
-  const Svg = component as FunctionComponent<SVGProps<SVGSVGElement>>;
 
-  return <Svg className={classes} {...restArgs} />;
+  return <SVG src={src} className={classes} {...restArgs} />;
 };
 
 export default Icon;

@@ -1,35 +1,30 @@
-@import "./variables";
-
-@import "./mixin";
-
 .#{$prefix}-alert {
-  box-shadow: $alert-box-shadow;
-  margin: $alert-margin-y 0;
+  box-shadow: $box-shadow;
   padding: $alert-padding-y $alert-padding-x;
 
   font-size: $alert-font-size;
   font-weight: $alert-font-weight;
 
-  color: $alert-font-color;
+  color: $alert-color;
 
   position: relative;
 
   display: flex;
 
   &.alert-success {
-    @include alert-background($success);
+    background: lighten($success, 20%);
   }
 
   &.alert-info {
-    @include alert-background($info);
+    background: lighten($info, 20%);
   }
 
   &.alert-warning {
-    @include alert-background($warning);
+    background: lighten($warning, 20%);
   }
 
   &.alert-error {
-    @include alert-background($danger);
+    background: lighten($danger, 20%);
   }
 
   .alert-desc {
@@ -43,7 +38,7 @@
     position: absolute;
     right: 0.3rem;
     top: 0.3rem;
-    fill: $alert-font-color;
+    fill: $alert-color;
   }
 
   .alert-icon-success {

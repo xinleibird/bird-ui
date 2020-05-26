@@ -1,4 +1,4 @@
 import { FunctionComponent } from 'react';
 import { IconProps } from '../Icon';
-declare const IncoInfo: FunctionComponent<IconProps>;
-export default IncoInfo;
+declare const IconInfo: FunctionComponent<IconProps>;
+export default IconInfo;

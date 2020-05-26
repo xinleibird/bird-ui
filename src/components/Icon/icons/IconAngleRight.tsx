@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import Icon, { IconProps } from '../Icon';
-import { ReactComponent as Svg } from './assets/angle-right.svg';
+import svg from './assets/angle-right.svg';
 
 const IconAngleRight: FunctionComponent<IconProps> = ({ ...restProps }) => {
-  return <Icon component={Svg} {...restProps} />;
+  return <Icon src={svg} {...restProps} />;
 };
 
 export default IconAngleRight;

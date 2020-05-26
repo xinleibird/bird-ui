@@ -34,8 +34,9 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
       ? false
       : true;
 
-  const subMenuClasses = cxs(className, 'menu-item', 'submenu', {
+  const subMenuClasses = cxs(className, 'submenu', {
     disabled,
+    opened: subMenuOpened,
   });
   const subMenuChildrenClasses = cxs('submenu-item');
   const menuIconDrawer = cxs('menu-icon-drawer', {

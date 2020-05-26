@@ -1,11 +1,30 @@
-@mixin animate-spin {
-  animation: spin 2000ms infinite linear;
+@mixin btn-size($padding-x, $padding-y, $font-size, $border-radius, $margin-x, $margin-y) {
+  padding: $padding-y $padding-x;
+  font-size: $font-size;
+  border-radius: $border-radius;
+  margin: 0 $margin-x $margin-y 0;
 }
 
-@mixin animate-beat {
-  animation: 1200ms ease 0s infinite beat;
-}
+@mixin btn-style(
+  $font-color,
+  $active-font-color,
+  $active-border-color,
+  $background-color,
+  $active-background-color
+) {
+  color: $font-color;
+  background-color: $background-color;
 
-@mixin animate-linear {
-  transition: all 300ms linear;
+  &:focus {
+    color: $active-font-color;
+  }
+
+  &:hover:not([disabled]):not(.disabled) {
+    color: $active-font-color;
+    background-color: $active-background-color;
+  }
+
+  &:active:not(.disabled) {
+    border-color: $active-border-color;
+  }
 }

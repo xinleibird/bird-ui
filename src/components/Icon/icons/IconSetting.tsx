@@ -1,9 +1,9 @@
 import React, { FunctionComponent } from 'react';
 import Icon, { IconProps } from '../Icon';
-import { ReactComponent as Svg } from './assets/setting.svg';
+import svg from './assets/setting.svg';
 
 const IconSetting: FunctionComponent<IconProps> = ({ ...restProps }) => {
-  return <Icon component={Svg} {...restProps} />;
+  return <Icon src={svg} {...restProps} />;
 };
 
 export default IconSetting;

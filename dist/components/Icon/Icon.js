@@ -22,18 +22,18 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import cxs from 'classnames';
 import React from 'react';
+import SVG from 'react-inlinesvg';
 import prefix from '../prefix';
 var Icon = function (_a) {
     var _b;
-    var className = _a.className, component = _a.component, size = _a.size, animate = _a.animate, restArgs = __rest(_a, ["className", "component", "size", "animate"]);
+    var className = _a.className, _c = _a.src, src = _c === void 0 ? '' : _c, size = _a.size, animate = _a.animate, restArgs = __rest(_a, ["className", "src", "size", "animate"]);
     var classes = cxs(className, prefix + "-icon", (_b = {
             'icon-lg': size === 'large',
             'icon-sm': size === 'small'
         },
         _b["animate-" + animate] = animate,
         _b));
-    var Svg = component;
-    return React.createElement(Svg, __assign({ className: classes }, restArgs));
+    return React.createElement(SVG, __assign({ src: src, className: classes }, restArgs));
 };
 export default Icon;
 //# sourceMappingURL=Icon.js.map

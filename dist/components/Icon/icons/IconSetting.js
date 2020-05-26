@@ -22,10 +22,10 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import React from 'react';
 import Icon from '../Icon';
-import { ReactComponent as Svg } from './assets/setting.svg';
+import svg from './assets/setting.svg';
 var IconSetting = function (_a) {
     var restProps = __rest(_a, []);
-    return React.createElement(Icon, __assign({ component: Svg }, restProps));
+    return React.createElement(Icon, __assign({ src: svg }, restProps));
 };
 export default IconSetting;
 //# sourceMappingURL=IconSetting.js.map
