@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { Menu, Icon, Button } from './main';
+import { Alert, Button, Icon, Input, Menu } from './main';
 
 const ShowComponents: FunctionComponent = () => {
   return (
@@ -79,6 +79,8 @@ const ShowComponents: FunctionComponent = () => {
       <Button btnType="primary" loading>
         Hello
       </Button>
+      <Alert closeable message="hello" description="ok" />
+      <Input />
     </>
   );
 };

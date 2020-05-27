@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import Button from './index';
+import { Button } from '../../main';
 const { Link } = Button;
 
 describe('test Button component', () => {

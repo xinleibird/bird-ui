@@ -1,6 +1,6 @@
 import cxs from 'classnames';
 import React, { FunctionComponent } from 'react';
-import SVG, { IProps as SVGProps } from 'react-inlinesvg';
+import Svg, { IProps as SVGProps } from 'react-inlinesvg';
 import prefix from '../prefix';
 
 export interface BaseIconProps {
@@ -25,7 +25,7 @@ const Icon: FunctionComponent<IconProps> = ({
     [`animate-${animate}`]: animate,
   });
 
-  return <SVG src={src} className={classes} {...restArgs} />;
+  return <Svg src={src} className={classes} {...restArgs} />;
 };
 
 export default Icon;

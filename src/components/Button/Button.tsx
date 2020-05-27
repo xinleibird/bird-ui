@@ -10,9 +10,7 @@ import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 
-interface SetLoadingStateCallback {
-  (loadingState: boolean): void;
-}
+type SetLoadingStateCallback = (loadingState: boolean) => void;
 interface BaseButtonProps {
   size?: 'large' | 'small';
   btnType?: 'primary' | 'secondary' | 'danger';

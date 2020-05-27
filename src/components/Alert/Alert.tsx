@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { useState, FunctionComponent, useMemo } from 'react';
+import React, { FunctionComponent, useMemo, useState } from 'react';
 import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
@@ -62,12 +62,12 @@ const Alert: FunctionComponent<AlertProps> = ({
           <div className="alert-message-wrapper">
             {closeable && (
               <Icon.Close
+                data-testid="alert-close-btn"
                 className="alert-close-btn"
                 onClick={() => {
-                  onClose && onClose();
+                  onClose?.();
                   setShow(false);
                 }}
-                data-testid="alert-close-btn"
               />
             )}
             {message}
