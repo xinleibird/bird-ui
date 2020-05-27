@@ -1,5 +1,5 @@
 import React from 'react';
-import { Menu, Icon, Button } from './main';
+import { Alert, Button, Icon, Input, Menu } from './main';
 var ShowComponents = function () {
     return (React.createElement(React.Fragment, null,
         React.createElement(Menu, null,
@@ -53,7 +53,10 @@ var ShowComponents = function () {
                     React.createElement(Menu.MenuItem, null, "\u83DC\u5355\u9879 2"),
                     React.createElement(Menu.MenuItem, null, "\u83DC\u5355\u9879 3"),
                     React.createElement(Menu.MenuItem, null, "\u83DC\u5355\u9879 4")))),
-        React.createElement(Button, { btnType: "primary", loading: true }, "Hello")));
+        React.createElement(Button, { btnType: "primary", loading: true }, "Hello"),
+        React.createElement(Button, { btnType: "primary", loading: true }, "Hello"),
+        React.createElement(Alert, { closeable: true, message: "hello", description: "ok" }),
+        React.createElement(Input, null)));
 };
 export default ShowComponents;
 //# sourceMappingURL=ShowComponents.js.map

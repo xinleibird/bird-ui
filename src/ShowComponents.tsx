@@ -79,6 +79,9 @@ const ShowComponents: FunctionComponent = () => {
       <Button btnType="primary" loading>
         Hello
       </Button>
+      <Button btnType="primary" loading>
+        Hello
+      </Button>
       <Alert closeable message="hello" description="ok" />
       <Input />
     </>

@@ -22,7 +22,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 };
 import cxs from 'classnames';
 import React from 'react';
-import SVG from 'react-inlinesvg';
+import Svg from 'react-inlinesvg';
 import prefix from '../prefix';
 var Icon = function (_a) {
     var _b;
@@ -33,7 +33,7 @@ var Icon = function (_a) {
         },
         _b["animate-" + animate] = animate,
         _b));
-    return React.createElement(SVG, __assign({ src: src, className: classes }, restArgs));
+    return React.createElement(Svg, __assign({ src: src, className: classes }, restArgs));
 };
 export default Icon;
 //# sourceMappingURL=Icon.js.map

@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { useState, useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
@@ -34,10 +34,11 @@ var Alert = function (_a) {
             React.createElement("div", { className: classes },
                 alertIcon,
                 React.createElement("div", { className: "alert-message-wrapper" },
-                    closeable && (React.createElement(Icon.Close, { className: "alert-close-btn", onClick: function () {
-                            onClose && onClose();
+                    closeable && (React.createElement(Icon.Close, { "data-testid": "alert-close-btn", className: "alert-close-btn", onClick: function () {
+                            var _a;
+                            (_a = onClose) === null || _a === void 0 ? void 0 : _a();
                             setShow(false);
-                        }, "data-testid": "alert-close-btn" })),
+                        } })),
                     message,
                     description && React.createElement("div", { className: "alert-desc" }, description)))));
     }, [alertIcon, classes, closeable, couldShow, description, message, onClose]);

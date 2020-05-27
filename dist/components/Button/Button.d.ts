@@ -1,7 +1,5 @@
 import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react';
-interface SetLoadingStateCallback {
-    (loadingState: boolean): void;
-}
+declare type SetLoadingStateCallback = (loadingState: boolean) => void;
 interface BaseButtonProps {
     size?: 'large' | 'small';
     btnType?: 'primary' | 'secondary' | 'danger';

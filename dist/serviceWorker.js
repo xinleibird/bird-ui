@@ -47,10 +47,11 @@ function registerValidSW(swUrl, config) {
         .then(function (registration) {
         registration.onupdatefound = function () {
             var installingWorker = registration.installing;
-            if (installingWorker == null) {
+            if (installingWorker === null) {
                 return;
             }
             installingWorker.onstatechange = function () {
+                var _a, _b;
                 if (installingWorker.state === 'installed') {
                     if (navigator.serviceWorker.controller) {
                         // At this point, the updated precached content has been fetched,
@@ -59,7 +60,7 @@ function registerValidSW(swUrl, config) {
                         console.log('New content is available and will be used when all ' +
                             'tabs for this page are closed. See https://bit.ly/CRA-PWA.');
                         // Execute callback
-                        if (config && config.onUpdate) {
+                        if ((_a = config) === null || _a === void 0 ? void 0 : _a.onUpdate) {
                             config.onUpdate(registration);
                         }
                     }
@@ -69,7 +70,7 @@ function registerValidSW(swUrl, config) {
                         // "Content is cached for offline use." message.
                         console.log('Content is cached for offline use.');
                         // Execute callback
-                        if (config && config.onSuccess) {
+                        if ((_b = config) === null || _b === void 0 ? void 0 : _b.onSuccess) {
                             config.onSuccess(registration);
                         }
                     }
@@ -84,13 +85,13 @@ function registerValidSW(swUrl, config) {
 function checkValidServiceWorker(swUrl, config) {
     // Check if the service worker can be found. If it can't reload the page.
     fetch(swUrl, {
-        headers: { 'Service-Worker': 'script' }
+        headers: { 'Service-Worker': 'script' },
     })
         .then(function (response) {
         // Ensure service worker exists, and that we really are getting a JS file.
         var contentType = response.headers.get('content-type');
         if (response.status === 404 ||
-            (contentType != null && contentType.indexOf('javascript') === -1)) {
+            (contentType !== null && contentType.indexOf('javascript') === -1)) {
             // No service worker found. Probably a different app. Reload the page.
             navigator.serviceWorker.ready.then(function (registration) {
                 registration.unregister().then(function () {
