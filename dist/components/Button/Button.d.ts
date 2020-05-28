@@ -8,6 +8,7 @@ interface BaseButtonProps {
     loading?: boolean;
     onBtnClick?: () => void;
     onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
+    onlyIcon?: boolean;
 }
 export declare type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
 declare const Button: FunctionComponent<ButtonProps>;

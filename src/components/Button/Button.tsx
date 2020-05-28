@@ -19,6 +19,7 @@ interface BaseButtonProps {
   loading?: boolean;
   onBtnClick?: () => void;
   onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
+  onlyIcon?: boolean;
 }
 
 export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
@@ -33,6 +34,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   loading,
   onBtnClick = () => {},
   onLoading = () => {},
+  onlyIcon,
   ...restProps
 }) => {
   const [isLoading, setLoading] = useState(loading);
@@ -62,10 +64,25 @@ const Button: FunctionComponent<ButtonProps> = ({
         <Transition in={isLoading} animationClassName="fade-in">
           <Icon.CircleNotch animate="spin" size={size} />
         </Transition>
-        <span className="btn-inner-text">{children}</span>
+        {onlyIcon ? (
+          <span className="btn-only-icon">{children}</span>
+        ) : (
+          <span className="btn-inner-text">{children}</span>
+        )}
       </button>
     );
-  }, [classes, disabled, isLoading, type, restProps, size, children, onBtnClick, onLoading]);
+  }, [
+    classes,
+    disabled,
+    isLoading,
+    type,
+    restProps,
+    size,
+    onlyIcon,
+    children,
+    onBtnClick,
+    onLoading,
+  ]);
 };
 
 export default Button;
