@@ -47,6 +47,18 @@
     background: $primary;
     color: $gray-10;
   }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    color: currentColor;
+    text-decoration: none;
+    box-shadow: none;
+
+    > * {
+      pointer-events: none;
+    }
+  }
 }
 
 .submenu {
