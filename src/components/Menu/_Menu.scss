@@ -66,6 +66,18 @@
     background: darken($primary, 20%);
   }
 
+  &.disabled {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    color: currentColor;
+    text-decoration: none;
+    box-shadow: none;
+
+    > * {
+      pointer-events: none;
+    }
+  }
+
   .submenu-title {
     font-weight: $font-weight-bold;
     padding: $menu-padding-y $menu-padding-x;
