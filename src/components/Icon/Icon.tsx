@@ -8,6 +8,7 @@ export interface BaseIconProps {
   src: string;
   size?: 'large' | 'small';
   animate?: 'spin' | 'beat';
+  color?: string;
 }
 
 export type IconProps = Partial<SVGProps & BaseIconProps>;
@@ -17,6 +18,7 @@ const Icon: FunctionComponent<IconProps> = ({
   src = '',
   size,
   animate,
+  color = '',
   ...restArgs
 }) => {
   const classes = cxs(className, `${prefix}-icon`, {
@@ -25,7 +27,7 @@ const Icon: FunctionComponent<IconProps> = ({
     [`animate-${animate}`]: animate,
   });
 
-  return <Svg src={src} className={classes} {...restArgs} />;
+  return <Svg src={src} className={classes} style={{ fill: color }} {...restArgs} />;
 };
 
 export default Icon;

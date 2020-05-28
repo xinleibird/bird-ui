@@ -16,4 +16,8 @@
   &.animate-spin {
     animation: spin 2000ms infinite linear;
   }
+
+  &.animate-beat {
+    animation: beat 2000ms infinite linear;
+  }
 }
