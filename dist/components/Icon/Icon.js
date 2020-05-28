@@ -26,14 +26,14 @@ import Svg from 'react-inlinesvg';
 import prefix from '../prefix';
 var Icon = function (_a) {
     var _b;
-    var className = _a.className, _c = _a.src, src = _c === void 0 ? '' : _c, size = _a.size, animate = _a.animate, restArgs = __rest(_a, ["className", "src", "size", "animate"]);
+    var className = _a.className, _c = _a.src, src = _c === void 0 ? '' : _c, size = _a.size, animate = _a.animate, _d = _a.color, color = _d === void 0 ? '' : _d, restArgs = __rest(_a, ["className", "src", "size", "animate", "color"]);
     var classes = cxs(className, prefix + "-icon", (_b = {
             'icon-lg': size === 'large',
             'icon-sm': size === 'small'
         },
         _b["animate-" + animate] = animate,
         _b));
-    return React.createElement(Svg, __assign({ src: src, className: classes }, restArgs));
+    return React.createElement(Svg, __assign({ src: src, className: classes, style: { fill: color } }, restArgs));
 };
 export default Icon;
 //# sourceMappingURL=Icon.js.map

@@ -5,6 +5,7 @@ export interface BaseIconProps {
     src: string;
     size?: 'large' | 'small';
     animate?: 'spin' | 'beat';
+    color?: string;
 }
 export declare type IconProps = Partial<SVGProps & BaseIconProps>;
 declare const Icon: FunctionComponent<IconProps>;
