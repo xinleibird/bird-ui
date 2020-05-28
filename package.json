@@ -1,10 +1,14 @@
 {
-  "name": "bird-ui",
+  "name": "@xinleibird/bird-ui",
   "version": "0.1.0",
-  "private": true,
   "main": "dist/main.js",
   "module": "dist/main.js",
   "types": "dist/main.d.ts",
+  "author": {
+    "name": "xltiger",
+    "email": "xinleibird@gmail.com"
+  },
+  "homepage": "https://github.com/xinleibird/bird-ui",
   "dependencies": {
     "classnames": "^2.2.6",
     "react-inlinesvg": "^1.2.0",
