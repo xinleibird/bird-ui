@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { CSSProperties, FunctionComponent, ReactNode, useMemo } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement, useMemo } from 'react';
 import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
 import { setItemActiveIndex } from './store/actions';
 
@@ -8,7 +8,7 @@ export interface MenuItemProps {
   index?: string;
   disabled?: boolean;
   style?: CSSProperties;
-  icon?: ReactNode;
+  icon?: ReactElement;
   children: string;
 }
 

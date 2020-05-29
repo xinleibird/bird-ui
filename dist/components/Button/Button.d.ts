@@ -10,6 +10,8 @@ interface BaseButtonProps {
     onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
     onlyIcon?: boolean;
 }
-export declare type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+declare type WithOnClickButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+export interface ButtonProps extends Omit<WithOnClickButtonProps, 'onClick'> {
+}
 declare const Button: FunctionComponent<ButtonProps>;
 export default Button;

@@ -164,3 +164,13 @@
     fill: $gray-10;
   }
 }
+
+.#{$prefix}-menu {
+  > .menu-item {
+    &.active {
+      background: $primary;
+      color: $gray-10;
+      border-right: transparent 3px solid;
+    }
+  }
+}

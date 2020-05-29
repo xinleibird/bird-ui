@@ -1,7 +1,10 @@
-import { FunctionComponent, InputHTMLAttributes } from 'react';
-interface BaseInputProps {
-    name: string;
+import { FunctionComponent, InputHTMLAttributes, ReactElement } from 'react';
+interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
+    size?: 'large' | 'small';
+    icon?: ReactElement;
+    disabled?: boolean;
+    prepand?: string | ReactElement;
+    append?: string | ReactElement;
 }
-declare type InputProps = Partial<InputHTMLAttributes<HTMLElement> & BaseInputProps>;
 declare const Input: FunctionComponent<InputProps>;
 export default Input;

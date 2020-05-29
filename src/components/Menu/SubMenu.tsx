@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, ReactNode, useMemo } from 'react';
+import React, { FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
 import Icon from '../Icon';
 import Transition from '../Transition';
@@ -9,9 +9,9 @@ import { toggleSubMenuShowIndex } from './store/actions';
 export interface SubMenuProps {
   className?: string;
   index?: string;
-  title: ReactNode;
+  title: string | ReactElement;
   disabled?: boolean;
-  icon?: ReactNode;
+  icon?: ReactElement;
   children?: ReactNode;
 }
 

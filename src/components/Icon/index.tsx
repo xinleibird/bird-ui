@@ -11,6 +11,7 @@ import IconSlider from './icons/IconSlider';
 import IconSuccess from './icons/IconSuccess';
 import IconTable from './icons/IconTable';
 import IconWarning from './icons/IconWarning';
+import IconSearch from './icons/IconSearch';
 
 export type IconComponent = FunctionComponent<IconProps> & {
   AngleDown: FunctionComponent<IconProps>;
@@ -24,6 +25,7 @@ export type IconComponent = FunctionComponent<IconProps> & {
   Warning: FunctionComponent<IconProps>;
   Success: FunctionComponent<IconProps>;
   CircleNotch: FunctionComponent<IconProps>;
+  Search: FunctionComponent<IconProps>;
 };
 
 const ReferIcon = Icon as IconComponent;
@@ -39,5 +41,6 @@ ReferIcon.Error = IconError;
 ReferIcon.Warning = IconWarning;
 ReferIcon.Success = IconSuccess;
 ReferIcon.CircleNotch = IconCircleNotch;
+ReferIcon.Search = IconSearch;
 
 export default ReferIcon;

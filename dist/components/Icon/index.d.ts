@@ -12,6 +12,7 @@ export declare type IconComponent = FunctionComponent<IconProps> & {
     Warning: FunctionComponent<IconProps>;
     Success: FunctionComponent<IconProps>;
     CircleNotch: FunctionComponent<IconProps>;
+    Search: FunctionComponent<IconProps>;
 };
 declare const ReferIcon: IconComponent;
 export default ReferIcon;

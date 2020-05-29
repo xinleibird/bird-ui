@@ -22,7 +22,9 @@ interface BaseButtonProps {
   onlyIcon?: boolean;
 }
 
-export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+type WithOnClickButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+
+export interface ButtonProps extends Omit<WithOnClickButtonProps, 'onClick'> {}
 
 const Button: FunctionComponent<ButtonProps> = ({
   className,

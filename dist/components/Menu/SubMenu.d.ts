@@ -1,10 +1,10 @@
-import { FunctionComponent, ReactNode } from 'react';
+import { FunctionComponent, ReactElement, ReactNode } from 'react';
 export interface SubMenuProps {
     className?: string;
     index?: string;
-    title: ReactNode;
+    title: string | ReactElement;
     disabled?: boolean;
-    icon?: ReactNode;
+    icon?: ReactElement;
     children?: ReactNode;
 }
 declare const SubMenu: FunctionComponent<SubMenuProps>;

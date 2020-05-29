@@ -10,6 +10,7 @@ import IconSlider from './icons/IconSlider';
 import IconSuccess from './icons/IconSuccess';
 import IconTable from './icons/IconTable';
 import IconWarning from './icons/IconWarning';
+import IconSearch from './icons/IconSearch';
 var ReferIcon = Icon;
 ReferIcon.AngleDown = IconAngleDown;
 ReferIcon.AngleRight = IconAngleRight;
@@ -22,5 +23,6 @@ ReferIcon.Error = IconError;
 ReferIcon.Warning = IconWarning;
 ReferIcon.Success = IconSuccess;
 ReferIcon.CircleNotch = IconCircleNotch;
+ReferIcon.Search = IconSearch;
 export default ReferIcon;
 //# sourceMappingURL=index.js.map
