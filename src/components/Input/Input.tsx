@@ -1,5 +1,12 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, InputHTMLAttributes, ReactElement, useMemo } from 'react';
+import React, {
+  FunctionComponent,
+  FunctionComponentElement,
+  InputHTMLAttributes,
+  ReactElement,
+  useMemo,
+} from 'react';
+import { IconProps } from '../Icon/Icon';
 import prefix from '../prefix';
 
 interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
@@ -19,6 +26,8 @@ const Input: FunctionComponent<InputProps> = ({
   append,
   ...restArgs
 }) => {
+  const Icon = icon as FunctionComponentElement<IconProps>;
+  const renderedIcon = React.cloneElement(Icon, { size });
   const groupClasses = cxs(className, {
     [`${prefix}-input-group`]: prefix,
     disabled,
@@ -42,7 +51,8 @@ const Input: FunctionComponent<InputProps> = ({
         {prepand && <button className={prepandClasses}>{prepand}</button>}
         <span className={`icon-anchor${size ? '-' + size : ''}`}>
           <input className={inputClasses} {...restArgs} />
-          {icon}
+          {/* {icon} */}
+          {renderedIcon}
         </span>
         {append && <button className={appendClasses}>{append}</button>}
       </span>
@@ -51,10 +61,10 @@ const Input: FunctionComponent<InputProps> = ({
     append,
     appendClasses,
     groupClasses,
-    icon,
     inputClasses,
     prepand,
     prepandClasses,
+    renderedIcon,
     restArgs,
     size,
   ]);

@@ -21,11 +21,13 @@ var __rest = (this && this.__rest) || function (s, e) {
     return t;
 };
 import cxs from 'classnames';
-import React, { useMemo } from 'react';
+import React, { useMemo, } from 'react';
 import prefix from '../prefix';
 var Input = function (_a) {
     var _b, _c;
     var className = _a.className, size = _a.size, icon = _a.icon, disabled = _a.disabled, prepand = _a.prepand, append = _a.append, restArgs = __rest(_a, ["className", "size", "icon", "disabled", "prepand", "append"]);
+    var Icon = icon;
+    var renderedIcon = React.cloneElement(Icon, { size: size });
     var groupClasses = cxs(className, (_b = {},
         _b[prefix + "-input-group"] = prefix,
         _b.disabled = disabled,
@@ -48,16 +50,16 @@ var Input = function (_a) {
             prepand && React.createElement("button", { className: prepandClasses }, prepand),
             React.createElement("span", { className: "icon-anchor" + (size ? '-' + size : '') },
                 React.createElement("input", __assign({ className: inputClasses }, restArgs)),
-                icon),
+                renderedIcon),
             append && React.createElement("button", { className: appendClasses }, append)));
     }, [
         append,
         appendClasses,
         groupClasses,
-        icon,
         inputClasses,
         prepand,
         prepandClasses,
+        renderedIcon,
         restArgs,
         size,
     ]);
