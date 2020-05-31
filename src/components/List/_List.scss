@@ -1,0 +1,27 @@
+.#{$prefix}-list {
+  &.#{$prefix}-ul {
+    margin: 0;
+  }
+}
+
+.#{$prefix}-ul {
+  width: 100%;
+  padding: 0;
+  background: $white;
+  font-size: $list-font-size;
+  font-family: $list-font-family;
+  font-weight: $list-font-weight;
+
+  border-width: $list-border-width;
+  border-radius: $list-border-radius;
+
+  box-shadow: $list-box-shadow;
+}
+
+.#{$prefix}-li {
+  line-height: $list-line-height;
+  list-style: none;
+  padding: $list-padding-y $list-padding-x;
+  box-shadow: inset 0 0 1px $gray-20;
+  // border-bottom: $gray-30 1px solid;
+}

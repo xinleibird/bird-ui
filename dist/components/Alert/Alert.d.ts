@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react';
-interface AlertProps {
+export interface AlertProps {
     className?: string;
     message?: string;
     description?: string;

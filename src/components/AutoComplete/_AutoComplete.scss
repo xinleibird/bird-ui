@@ -1,0 +1,20 @@
+.#{$prefix}-autocomplete {
+  display: inline-flex;
+  flex-direction: column;
+
+  position: relative;
+
+  .#{$prefix}-ul {
+    position: absolute;
+    top: 2.65rem;
+  }
+
+  .#{$prefix}-li {
+    &:hover,
+    &:focus,
+    &:active {
+      background: $primary;
+      color: $gray-10;
+    }
+  }
+}

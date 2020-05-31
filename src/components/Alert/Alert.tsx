@@ -4,9 +4,7 @@ import Icon from '../Icon';
 import prefix from '../prefix';
 import Transition from '../Transition';
 
-const { Success, Info, Warning, Error } = Icon;
-
-interface AlertProps {
+export interface AlertProps {
   className?: string;
   message?: string;
   description?: string;
@@ -34,23 +32,23 @@ const Alert: FunctionComponent<AlertProps> = ({
 
   switch (type) {
     case 'success':
-      alertIcon = <Success className="alert-icon-success" />;
+      alertIcon = <Icon.Success className="alert-icon-success" />;
       break;
 
     case 'info':
-      alertIcon = <Info className="alert-icon-info" />;
+      alertIcon = <Icon.Info className="alert-icon-info" />;
       break;
 
     case 'warning':
-      alertIcon = <Warning className="alert-icon-warning" />;
+      alertIcon = <Icon.Warning className="alert-icon-warning" />;
       break;
 
     case 'error':
-      alertIcon = <Error className="alert-icon-error" />;
+      alertIcon = <Icon.Error className="alert-icon-error" />;
       break;
 
     default:
-      alertIcon = <Success className="alert-icon-success" />;
+      alertIcon = <Icon.Success className="alert-icon-success" />;
       break;
   }
 

@@ -1,6 +1,6 @@
 import { FunctionComponent, InputHTMLAttributes, ReactElement } from 'react';
-interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
-    size?: 'large' | 'small';
+interface InputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
+    inputSize?: 'large' | 'small';
     icon?: ReactElement;
     disabled?: boolean;
     prepand?: string | ReactElement;

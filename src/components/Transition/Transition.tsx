@@ -3,7 +3,7 @@ import { CSSTransition } from 'react-transition-group';
 import { CSSTransitionProps } from 'react-transition-group/CSSTransition';
 
 interface BaseTransitionProps {
-  animationClassName?: 'zoom-in-top' | 'fade-in' | 'fade-in-out' | 'fade-out-in';
+  animationClassName?: 'zoom-in-top' | 'fade-in';
 }
 
 type TransitionProps = Partial<CSSTransitionProps & BaseTransitionProps>;

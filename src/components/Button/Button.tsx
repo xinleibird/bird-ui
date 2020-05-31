@@ -17,7 +17,7 @@ interface BaseButtonProps {
   children?: ReactNode;
   disabled?: boolean;
   loading?: boolean;
-  onBtnClick?: () => void;
+  onBtnClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
   onlyIcon?: boolean;
 }
@@ -57,7 +57,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         {...restProps}
         onClick={(e) => {
           e.preventDefault();
-          onBtnClick();
+          onBtnClick(e);
           return new Promise((resolve) => {
             resolve(onLoading(setLoading));
           });

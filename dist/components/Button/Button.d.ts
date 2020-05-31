@@ -1,4 +1,4 @@
-import { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react';
+import React, { ButtonHTMLAttributes, FunctionComponent, ReactNode } from 'react';
 declare type SetLoadingStateCallback = (loadingState: boolean) => void;
 interface BaseButtonProps {
     size?: 'large' | 'small';
@@ -6,7 +6,7 @@ interface BaseButtonProps {
     children?: ReactNode;
     disabled?: boolean;
     loading?: boolean;
-    onBtnClick?: () => void;
+    onBtnClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
     onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
     onlyIcon?: boolean;
 }

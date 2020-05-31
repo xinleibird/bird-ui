@@ -39,7 +39,7 @@ var Button = function (_a) {
     return useMemo(function () {
         return (React.createElement("button", __assign({ className: classes, disabled: disabled || isLoading, type: type }, restProps, { onClick: function (e) {
                 e.preventDefault();
-                onBtnClick();
+                onBtnClick(e);
                 return new Promise(function (resolve) {
                     resolve(onLoading(setLoading));
                 });

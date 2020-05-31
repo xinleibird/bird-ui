@@ -121,6 +121,12 @@ $alert-desc-weight: $font-weight-light !default;
 $alert-disabled-opacity: 0.5 !default;
 $alert-border-radius: $border-radius !default;
 
+// dialog
+$dialog-background: #000 !default;
+$dialog-opacity: 0.25;
+$dialog-padding-y: 1.2rem !default;
+$dialog-padding-x: 2.5rem !default;
+
 // button
 $btn-font-family: $font-family-base !default;
 $btn-font-weight: $font-weight-base !default;
@@ -256,3 +262,19 @@ $input-border-radius-lg: 0.4 * $border-radius-lg !default;
 
 $input-transition: $base-transition !default;
 $input-box-shadow: $box-shadow !default;
+
+// list
+$list-font-size: $font-size-base !default;
+$list-font-family: $font-family-base !default;
+$list-font-weight: $font-weight-base !default;
+
+$list-line-height: 1.5 * $line-height-base !default;
+
+$list-padding-y: 0.4rem !default;
+$list-padding-x: 0.45rem !default;
+
+$list-border-width: 1px !default;
+$list-border-radius: 0.4 * $border-radius !default;
+
+$list-transition: $base-transition !default;
+$list-box-shadow: $box-shadow !default;

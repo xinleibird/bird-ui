@@ -9,8 +9,8 @@ import React, {
 import { IconProps } from '../Icon/Icon';
 import prefix from '../prefix';
 
-interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
-  size?: 'large' | 'small';
+interface InputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
+  inputSize?: 'large' | 'small';
   icon?: ReactElement;
   disabled?: boolean;
   prepand?: string | ReactElement;
@@ -20,6 +20,7 @@ interface InputProps extends Omit<InputHTMLAttributes<HTMLElement>, 'size'> {
 const Input: FunctionComponent<InputProps> = ({
   className,
   size,
+  inputSize,
   icon,
   disabled,
   prepand,
@@ -27,31 +28,31 @@ const Input: FunctionComponent<InputProps> = ({
   ...restArgs
 }) => {
   const Icon = icon as FunctionComponentElement<IconProps>;
-  const renderedIcon = React.cloneElement(Icon, { size });
+  const renderedIcon = icon && React.cloneElement(Icon, { inputSize });
+
   const groupClasses = cxs(className, {
     [`${prefix}-input-group`]: prefix,
     disabled,
   });
   const inputClasses = cxs({
     [`${prefix}-input`]: prefix,
-    'input-lg': size === 'large',
-    'input-sm': size === 'small',
+    'input-lg': inputSize === 'large',
+    'input-sm': inputSize === 'small',
   });
   const prepandClasses = cxs('prepand', {
-    'prepand-lg': size === 'large',
-    'prepand-sm': size === 'small',
+    'prepand-lg': inputSize === 'large',
+    'prepand-sm': inputSize === 'small',
   });
   const appendClasses = cxs('append', {
-    'append-lg': size === 'large',
-    'append-sm': size === 'small',
+    'append-lg': inputSize === 'large',
+    'append-sm': inputSize === 'small',
   });
   return useMemo(() => {
     return (
       <span className={groupClasses}>
         {prepand && <button className={prepandClasses}>{prepand}</button>}
-        <span className={`icon-anchor${size ? '-' + size : ''}`}>
-          <input className={inputClasses} {...restArgs} />
-          {/* {icon} */}
+        <span className={`icon-anchor${inputSize ? '-' + inputSize : ''}`}>
+          <input className={inputClasses} size={size} {...restArgs} />
           {renderedIcon}
         </span>
         {append && <button className={appendClasses}>{append}</button>}
@@ -67,6 +68,7 @@ const Input: FunctionComponent<InputProps> = ({
     renderedIcon,
     restArgs,
     size,
+    inputSize,
   ]);
 };
 

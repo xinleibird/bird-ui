@@ -18,7 +18,7 @@
 .#{$prefix}-input {
   box-shadow: $input-box-shadow;
   transition: $input-transition;
-  border: transparent 2px solid;
+  border: $gray-20 2px solid;
   padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
 
   background-color: $white;
@@ -55,7 +55,7 @@
 .append {
   box-shadow: $input-box-shadow;
   transition: $input-transition;
-  border: transparent 2px solid;
+  border: $gray-20 2px solid;
   padding: $input-padding-y 2 * $input-padding-x;
   color: $gray-70;
 
