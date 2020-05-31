@@ -19,7 +19,7 @@ describe('test Button component', () => {
 
   const clickFn = jest.fn();
   it('<Button> onclick event', () => {
-    render(<Button onBtnClick={clickFn}>Button Default</Button>);
+    render(<Button onClick={clickFn}>Button Default</Button>);
     fireEvent.click(screen.getByRole('button'));
     expect(clickFn).toHaveBeenCalled();
   });

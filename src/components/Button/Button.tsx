@@ -17,14 +17,11 @@ interface BaseButtonProps {
   children?: ReactNode;
   disabled?: boolean;
   loading?: boolean;
-  onBtnClick?: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   onLoading?: (setLoadingCallback: SetLoadingStateCallback) => void;
   onlyIcon?: boolean;
 }
 
-type WithOnClickButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
-
-export interface ButtonProps extends Omit<WithOnClickButtonProps, 'onClick'> {}
+export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
 
 const Button: FunctionComponent<ButtonProps> = ({
   className,
@@ -34,7 +31,6 @@ const Button: FunctionComponent<ButtonProps> = ({
   disabled = false,
   type = 'button',
   loading,
-  onBtnClick = () => {},
   onLoading = () => {},
   onlyIcon,
   ...restProps
@@ -55,9 +51,8 @@ const Button: FunctionComponent<ButtonProps> = ({
         disabled={disabled || isLoading}
         type={type}
         {...restProps}
-        onClick={(e) => {
+        onClickCapture={(e) => {
           e.preventDefault();
-          onBtnClick(e);
           return new Promise((resolve) => {
             resolve(onLoading(setLoading));
           });
@@ -73,18 +68,7 @@ const Button: FunctionComponent<ButtonProps> = ({
         )}
       </button>
     );
-  }, [
-    classes,
-    disabled,
-    isLoading,
-    type,
-    restProps,
-    size,
-    onlyIcon,
-    children,
-    onBtnClick,
-    onLoading,
-  ]);
+  }, [classes, disabled, isLoading, type, restProps, size, onlyIcon, children, onLoading]);
 };
 
 export default Button;
