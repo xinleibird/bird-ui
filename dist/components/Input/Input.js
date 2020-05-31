@@ -27,7 +27,8 @@ var Input = function (_a) {
     var _b, _c;
     var className = _a.className, size = _a.size, inputSize = _a.inputSize, icon = _a.icon, disabled = _a.disabled, prepand = _a.prepand, append = _a.append, restArgs = __rest(_a, ["className", "size", "inputSize", "icon", "disabled", "prepand", "append"]);
     var Icon = icon;
-    var renderedIcon = icon && React.cloneElement(Icon, { inputSize: inputSize });
+    var iconProp = inputSize ? { size: inputSize } : {};
+    var renderedIcon = icon && React.cloneElement(Icon, iconProp);
     var groupClasses = cxs(className, (_b = {},
         _b[prefix + "-input-group"] = prefix,
         _b.disabled = disabled,

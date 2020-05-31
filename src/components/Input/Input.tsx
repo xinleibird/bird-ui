@@ -28,7 +28,10 @@ const Input: FunctionComponent<InputProps> = ({
   ...restArgs
 }) => {
   const Icon = icon as FunctionComponentElement<IconProps>;
-  const renderedIcon = icon && React.cloneElement(Icon, { inputSize });
+
+  const iconProp = inputSize ? { size: inputSize } : {};
+
+  const renderedIcon = icon && React.cloneElement(Icon, iconProp);
 
   const groupClasses = cxs(className, {
     [`${prefix}-input-group`]: prefix,
