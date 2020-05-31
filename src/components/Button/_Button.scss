@@ -173,4 +173,13 @@
       $link-margin-y-sm
     );
   }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: $btn-disabled-opacity;
+    color: currentColor;
+    text-decoration: none;
+    box-shadow: none;
+    pointer-events: none;
+  }
 }

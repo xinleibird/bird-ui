@@ -1,21 +1,19 @@
-import React, { FunctionComponent } from 'react';
+import React, { FunctionComponent, KeyboardEvent, HtmlHTMLAttributes } from 'react';
 import MenuItem from './components/Menu/MenuItem';
-import { Menu } from './main';
+import { Menu, Autocomplete } from './main';
 // import Auto from './components/AutoComplete';
 
 const ShowComponents: FunctionComponent = () => {
   return (
-    <Menu>
-      <MenuItem>hello</MenuItem>
-      <MenuItem>hello</MenuItem>
-      <MenuItem>hello</MenuItem>
-      <Menu.SubMenu title="hello">
-        <MenuItem>hello</MenuItem>
-        <MenuItem>hello</MenuItem>
-        <MenuItem>hello</MenuItem>
-      </Menu.SubMenu>
-      <Menu.SubMenu title="hello"></Menu.SubMenu>
-    </Menu>
+    <Autocomplete
+      data={['a', 'ab', 'abc']}
+      onKeyPress={(e) => {
+        if (e.key === 'Enter') {
+          const tar = e.target as React.KeyboardEvent & HTMLInputElement;
+          tar.value = '';
+        }
+      }}
+    />
   );
 };
 
