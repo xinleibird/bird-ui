@@ -27,7 +27,7 @@ export var index = function (state, action) {
             if (action.index) {
                 state.show.push(action.index);
             }
-            return __assign({ active: state.active, show: state.show });
+            return { active: state.active, show: state.show };
         default:
             return state;
     }

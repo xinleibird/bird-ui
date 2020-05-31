@@ -3,12 +3,12 @@ export declare const index: (state: {
     active: string;
     show: string[];
 }, action: Action) => {
-    active: any;
+    active: string;
     show: string[];
 };
 declare const _default: import("redux").Reducer<import("redux").CombinedState<{
     index: {
-        active: any;
+        active: string;
         show: string[];
     };
 }>, import("redux").AnyAction>;

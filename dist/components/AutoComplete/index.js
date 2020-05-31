@@ -1,2 +1,2 @@
-export { default } from './AutoComplete';
+export { default } from './Autocomplete';
 //# sourceMappingURL=index.js.map

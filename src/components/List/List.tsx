@@ -1,7 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, HTMLAttributes, LiHTMLAttributes, useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateSuggestions } from '../AutoComplete/store/actions';
+import { updateSuggestions } from '../Autocomplete/store/actions';
 import prefix from '../prefix';
 
 export const Ul: FunctionComponent<HTMLAttributes<HTMLElement>> = ({

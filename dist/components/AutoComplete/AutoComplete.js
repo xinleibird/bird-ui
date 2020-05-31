@@ -27,10 +27,10 @@ import { createStore } from 'redux';
 import { Input } from '../../main';
 import List from '../List';
 import prefix from '../prefix';
+import Transition from '../Transition';
 import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers from './store/reducers';
-import Transition from '../Transition';
-var AutoComplete = function (_a) {
+var Autocomplete = function (_a) {
     var className = _a.className, _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.size, size = _c === void 0 ? 40 : _c, onKeyPress = _a.onKeyPress;
     var classes = cxs(className, prefix + "-autocomplete");
     var suggestions = useSelector(function (state) {
@@ -65,11 +65,11 @@ var AutoComplete = function (_a) {
         React.createElement(Transition, { in: !inputEmpty },
             React.createElement(List, { data: filtered }))));
 };
-var AutoCompleteWrapper = function (_a) {
+var AutocompleteWrapper = function (_a) {
     var args = __rest(_a, []);
     var store = createStore(reducers);
     return (React.createElement(Provider, { store: store },
-        React.createElement(AutoComplete, __assign({}, args))));
+        React.createElement(Autocomplete, __assign({}, args))));
 };
-export default AutoCompleteWrapper;
-//# sourceMappingURL=AutoComplete.js.map
+export default AutocompleteWrapper;
+//# sourceMappingURL=Autocomplete.js.map

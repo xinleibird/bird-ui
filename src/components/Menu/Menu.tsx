@@ -16,7 +16,7 @@ import { SubMenuProps } from './SubMenu';
 export const renderChildren = (children: ReactNode, index = '') => {
   return React.Children.map(children, (child, i) => {
     const itemElement = (child as unknown) as FunctionComponentElement<MenuItemProps>;
-    if (itemElement.type.name === 'MenuItem') {
+    if (itemElement.type.name === 'MenuItem' || itemElement.type.displayName === 'MenuItem') {
       return React.cloneElement(itemElement, {
         index: index ? `${index}-${i}` : `${i}`,
         key: index ? `${index}-${i}` : `${i}`,
@@ -24,7 +24,7 @@ export const renderChildren = (children: ReactNode, index = '') => {
     }
 
     const subElement = (child as unknown) as FunctionComponentElement<SubMenuProps>;
-    if (subElement.type.name === 'SubMenu') {
+    if (subElement.type.name === 'SubMenu' || itemElement.type.displayName === 'SubMenu') {
       return React.cloneElement(subElement, {
         index: index ? `${index}-${i}` : `${i}`,
         key: index ? `${index}-${i}` : `${i}`,

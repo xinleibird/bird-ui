@@ -23,7 +23,7 @@ var __rest = (this && this.__rest) || function (s, e) {
 import cxs from 'classnames';
 import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
-import { updateSuggestions } from '../AutoComplete/store/actions';
+import { updateSuggestions } from '../Autocomplete/store/actions';
 import prefix from '../prefix';
 export var Ul = function (_a) {
     var className = _a.className, children = _a.children, args = __rest(_a, ["className", "children"]);

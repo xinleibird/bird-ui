@@ -31,14 +31,14 @@ export var renderChildren = function (children, index) {
     if (index === void 0) { index = ''; }
     return React.Children.map(children, function (child, i) {
         var itemElement = child;
-        if (itemElement.type.name === 'MenuItem') {
+        if (itemElement.type.name === 'MenuItem' || itemElement.type.displayName === 'MenuItem') {
             return React.cloneElement(itemElement, {
                 index: index ? index + "-" + i : "" + i,
                 key: index ? index + "-" + i : "" + i,
             });
         }
         var subElement = child;
-        if (subElement.type.name === 'SubMenu') {
+        if (subElement.type.name === 'SubMenu' || itemElement.type.displayName === 'SubMenu') {
             return React.cloneElement(subElement, {
                 index: index ? index + "-" + i : "" + i,
                 key: index ? index + "-" + i : "" + i,
