@@ -10,7 +10,7 @@ export const index = (
       return { ...{ active: action.index, show: state.show } };
 
     case ACTION_TYPE.TOGGLE_SHOW_INDEX:
-      state.show = state.show.filter((element: string) => {
+      state.show = state.show.filter((element) => {
         if (element === action.index) {
           action.index = '';
           return false;
@@ -21,7 +21,7 @@ export const index = (
       if (action.index) {
         state.show.push(action.index);
       }
-      return { ...{ active: state.active, show: state.show } };
+      return { active: state.active, show: state.show };
 
     default:
       return state;

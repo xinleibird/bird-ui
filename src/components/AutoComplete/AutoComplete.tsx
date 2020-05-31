@@ -5,18 +5,18 @@ import { createStore } from 'redux';
 import { Input } from '../../main';
 import List from '../List';
 import prefix from '../prefix';
+import Transition from '../Transition';
 import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers, { SuggestionsType } from './store/reducers';
-import Transition from '../Transition';
 
-interface AutoCompleteProps {
+interface AutocompleteProps {
   className?: string;
   data: string[];
   size?: number;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-const AutoComplete: FunctionComponent<AutoCompleteProps> = ({
+const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   className,
   data = [],
   size = 40,
@@ -72,13 +72,13 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = ({
   );
 };
 
-const AutoCompleteWrapper: FunctionComponent<AutoCompleteProps> = ({ ...args }) => {
+const AutocompleteWrapper: FunctionComponent<AutocompleteProps> = ({ ...args }) => {
   const store = createStore(reducers);
   return (
     <Provider store={store}>
-      <AutoComplete {...args} />
+      <Autocomplete {...args} />
     </Provider>
   );
 };
 
-export default AutoCompleteWrapper;
+export default AutocompleteWrapper;

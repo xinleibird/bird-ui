@@ -5,7 +5,7 @@ export enum ACTION_TYPE {
 
 export interface Action {
   type: ACTION_TYPE;
-  [anyKey: string]: any;
+  index: string;
 }
 
 export const setItemActiveIndex = (index: string) => {
