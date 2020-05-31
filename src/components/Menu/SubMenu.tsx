@@ -17,7 +17,7 @@ export interface SubMenuProps {
 
 const SubMenu: FunctionComponent<SubMenuProps> = ({
   className,
-  index,
+  index = '',
   title,
   disabled,
   icon,
@@ -54,7 +54,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
           className="submenu-title"
           onClick={(e) => {
             e.preventDefault();
-            dispatch(toggleSubMenuShowIndex(index!));
+            dispatch(toggleSubMenuShowIndex(index));
           }}
         >
           {icon}

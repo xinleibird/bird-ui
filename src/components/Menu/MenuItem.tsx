@@ -18,7 +18,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   children,
   style,
   icon,
-  index,
+  index = '',
 }) => {
   const activeIndex = useSelector(
     (state: DefaultRootState & { index: { active: string } }) => {
@@ -38,7 +38,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
         onClick={(e) => {
           e.preventDefault();
           if (!disabled) {
-            dispatch(setItemActiveIndex(index!));
+            dispatch(setItemActiveIndex(index));
           }
         }}
         className={classes}

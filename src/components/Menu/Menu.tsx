@@ -43,13 +43,13 @@ export interface MenuProps {
   children: ReactNode;
 }
 
-const MenuInner: FunctionComponent<MenuProps> = ({
+const Menu: FunctionComponent<MenuProps> = ({
   className,
   direction = 'horizontal',
   sticky,
   style,
-  defaultIndex,
-  defaultSubMenuIndex,
+  defaultIndex = '',
+  defaultSubMenuIndex = '',
   children,
 }) => {
   const dispatch = useDispatch();
@@ -82,13 +82,13 @@ const MenuInner: FunctionComponent<MenuProps> = ({
   );
 };
 
-const Menu: FunctionComponent<MenuProps> = ({ ...args }) => {
+const MenuWrapper: FunctionComponent<MenuProps> = ({ ...args }) => {
   const store = createStore(reducers);
   return (
     <Provider store={store}>
-      <MenuInner {...args} />
+      <Menu {...args} />
     </Provider>
   );
 };
 
-export default Menu;
+export default MenuWrapper;

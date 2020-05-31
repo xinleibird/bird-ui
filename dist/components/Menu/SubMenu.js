@@ -6,7 +6,7 @@ import Transition from '../Transition';
 import { renderChildren } from './Menu';
 import { toggleSubMenuShowIndex } from './store/actions';
 var SubMenu = function (_a) {
-    var className = _a.className, index = _a.index, title = _a.title, disabled = _a.disabled, icon = _a.icon, children = _a.children;
+    var className = _a.className, _b = _a.index, index = _b === void 0 ? '' : _b, title = _a.title, disabled = _a.disabled, icon = _a.icon, children = _a.children;
     var showIndex = useSelector(function (state) {
         return state.index.show;
     });

@@ -3,7 +3,7 @@ import React, { useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setItemActiveIndex } from './store/actions';
 var MenuItem = function (_a) {
-    var className = _a.className, _b = _a.disabled, disabled = _b === void 0 ? false : _b, children = _a.children, style = _a.style, icon = _a.icon, index = _a.index;
+    var className = _a.className, _b = _a.disabled, disabled = _b === void 0 ? false : _b, children = _a.children, style = _a.style, icon = _a.icon, _c = _a.index, index = _c === void 0 ? '' : _c;
     var activeIndex = useSelector(function (state) {
         return state.index.active;
     });

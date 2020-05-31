@@ -14,8 +14,9 @@
   "include": ["src"],
   "exclude": [
     "src/**/*.test.tsx",
-    "src/**/*.stories.tsx",
     "src/index.tsx",
-    "src/ShowComponents.tsx"
+    "src/ShowComponents.tsx",
+    "src/serviceWorker.ts",
+    "src/setupTests.ts"
   ]
 }

@@ -10,13 +10,13 @@ var __assign = (this && this.__assign) || function () {
     return __assign.apply(this, arguments);
 };
 import { combineReducers } from 'redux';
-import { ActionType } from './actions';
+import { ACTION_TYPE } from './actions';
 export var index = function (state, action) {
     if (state === void 0) { state = { active: '0', show: [] }; }
     switch (action.type) {
-        case ActionType.SET_ACTIVE_INDEX:
+        case ACTION_TYPE.SET_ACTIVE_INDEX:
             return __assign({ active: action.index, show: state.show });
-        case ActionType.TOGGLE_SHOW_INDEX:
+        case ACTION_TYPE.TOGGLE_SHOW_INDEX:
             state.show = state.show.filter(function (element) {
                 if (element === action.index) {
                     action.index = '';

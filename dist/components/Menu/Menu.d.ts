@@ -11,5 +11,5 @@ export interface MenuProps {
     style?: CSSProperties;
     children: ReactNode;
 }
-declare const Menu: FunctionComponent<MenuProps>;
-export default Menu;
+declare const MenuWrapper: FunctionComponent<MenuProps>;
+export default MenuWrapper;
