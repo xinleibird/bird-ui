@@ -18,7 +18,7 @@
 .#{$prefix}-input {
   box-shadow: $input-box-shadow;
   transition: $input-transition;
-  border: transparent 1px solid;
+  border: $gray-20 1px solid;
   padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
 
   background-color: $white;
@@ -66,7 +66,6 @@
 }
 
 .prepand {
-  border: transparent 1px solid;
   border-radius: $input-border-radius 0 0 $input-border-radius;
   font-size: $input-font-size;
 
@@ -82,7 +81,6 @@
 }
 
 .append {
-  border: transparent 1px solid;
   border-radius: 0 $border-radius $input-border-radius 0;
 
   &.append-lg {

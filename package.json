@@ -1,6 +1,6 @@
 {
   "name": "@xinleibird/bird-ui",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "main": "dist/main.js",
   "module": "dist/main.js",
   "types": "dist/main.d.ts",
