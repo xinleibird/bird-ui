@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="">
+  <a href="https://xinleibird.github.io/bird-ui">
     <img width="200" src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo512.png">
   </a>
 </p>
