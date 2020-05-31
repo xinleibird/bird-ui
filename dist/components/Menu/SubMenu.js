@@ -48,5 +48,8 @@ var SubMenu = function (_a) {
         index,
     ]);
 };
+SubMenu.defaultProps = {
+    menuCheckId: 'SubMenu',
+};
 export default SubMenu;
 //# sourceMappingURL=SubMenu.js.map

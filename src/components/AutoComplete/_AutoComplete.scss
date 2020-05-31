@@ -8,6 +8,7 @@
     position: absolute;
     top: 2.65rem;
     background: $white;
+    z-index: 999;
   }
 
   .#{$prefix}-li {

@@ -13,6 +13,7 @@ export interface SubMenuProps {
   disabled?: boolean;
   icon?: ReactElement;
   children?: ReactNode;
+  readonly menuCheckId?: 'SubMenu';
 }
 
 const SubMenu: FunctionComponent<SubMenuProps> = ({
@@ -77,6 +78,10 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
     dispatch,
     index,
   ]);
+};
+
+SubMenu.defaultProps = {
+  menuCheckId: 'SubMenu',
 };
 
 export default SubMenu;

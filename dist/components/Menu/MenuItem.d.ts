@@ -6,6 +6,7 @@ export interface MenuItemProps {
     style?: CSSProperties;
     icon?: ReactElement;
     children: string;
+    readonly menuCheckId?: 'MenuItem';
 }
 declare const MenuItem: FunctionComponent<MenuItemProps>;
 export default MenuItem;

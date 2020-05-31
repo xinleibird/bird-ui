@@ -1,10 +1,5 @@
 import cxs from 'classnames';
-import React, {
-  CSSProperties,
-  FunctionComponent,
-  FunctionComponentElement,
-  ReactNode,
-} from 'react';
+import React, { CSSProperties, FunctionComponent, ReactElement, ReactNode } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { createStore } from 'redux';
 import prefix from '../prefix';
@@ -15,17 +10,12 @@ import { SubMenuProps } from './SubMenu';
 
 export const renderChildren = (children: ReactNode, index = '') => {
   return React.Children.map(children, (child, i) => {
-    const itemElement = (child as unknown) as FunctionComponentElement<MenuItemProps>;
-    if (itemElement.type.name === 'MenuItem' || itemElement.type.displayName === 'MenuItem') {
+    const itemElement = child as ReactElement<SubMenuProps & MenuItemProps>;
+    if (
+      itemElement.props.menuCheckId === 'MenuItem' ||
+      itemElement.props.menuCheckId === 'SubMenu'
+    ) {
       return React.cloneElement(itemElement, {
-        index: index ? `${index}-${i}` : `${i}`,
-        key: index ? `${index}-${i}` : `${i}`,
-      });
-    }
-
-    const subElement = (child as unknown) as FunctionComponentElement<SubMenuProps>;
-    if (subElement.type.name === 'SubMenu' || itemElement.type.displayName === 'SubMenu') {
-      return React.cloneElement(subElement, {
         index: index ? `${index}-${i}` : `${i}`,
         key: index ? `${index}-${i}` : `${i}`,
       });

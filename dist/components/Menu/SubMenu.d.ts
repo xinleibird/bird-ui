@@ -6,6 +6,7 @@ export interface SubMenuProps {
     disabled?: boolean;
     icon?: ReactElement;
     children?: ReactNode;
+    readonly menuCheckId?: 'SubMenu';
 }
 declare const SubMenu: FunctionComponent<SubMenuProps>;
 export default SubMenu;

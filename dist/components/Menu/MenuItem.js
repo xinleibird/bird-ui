@@ -23,5 +23,8 @@ var MenuItem = function (_a) {
             children));
     }, [children, classes, disabled, dispatch, icon, index, style]);
 };
+MenuItem.defaultProps = {
+    menuCheckId: 'MenuItem',
+};
 export default MenuItem;
 //# sourceMappingURL=MenuItem.js.map

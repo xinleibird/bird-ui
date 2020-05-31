@@ -10,6 +10,7 @@ export interface MenuItemProps {
   style?: CSSProperties;
   icon?: ReactElement;
   children: string;
+  readonly menuCheckId?: 'MenuItem';
 }
 
 const MenuItem: FunctionComponent<MenuItemProps> = ({
@@ -49,6 +50,10 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
       </li>
     );
   }, [children, classes, disabled, dispatch, icon, index, style]);
+};
+
+MenuItem.defaultProps = {
+  menuCheckId: 'MenuItem',
 };
 
 export default MenuItem;
