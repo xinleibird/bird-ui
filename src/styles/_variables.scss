@@ -102,6 +102,10 @@ $border-radius-lg: 0.35rem !default;
 // box-shadow
 $box-shadow: 0 0 4px $gray-30 !default;
 
+$box-shadow-front-color: opacify($primary, 0.6);
+$box-shadow-end-color: opacify($primary, 0.1);
+$box-shadow-focus: inset 0 1px 2px $box-shadow-front-color, 0 0 0 0.05rem $box-shadow-end-color;
+
 // alert
 $alert-padding-y: 1.2rem !default;
 $alert-padding-x: 2.5rem !default;

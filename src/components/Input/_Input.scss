@@ -16,10 +16,8 @@
 }
 
 .#{$prefix}-input {
-  // box-shadow: $input-box-shadow;
-  box-shadow: none;
   transition: $input-transition;
-  border: $gray-20 2px solid;
+  border: $gray-20 1px solid;
   padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
 
   border-radius: 0;
@@ -34,43 +32,48 @@
 
   vertical-align: 0.2px;
 
+  box-shadow: $input-box-shadow;
+
   &:focus {
     outline: 0;
-    border: $primary 2px solid;
+    box-shadow: $box-shadow-focus;
+    border: $primary 1px solid;
   }
 
   &.input-lg {
     padding: $input-padding-y-lg 4 * $input-padding-x-lg $input-padding-y-lg
       $input-padding-x-lg;
     font-size: $btn-font-size-lg;
-    vertical-align: -0.05px;
+    vertical-align: 0.25px;
   }
 
   &.input-sm {
     padding: $input-padding-y-sm 4 * $input-padding-x-sm $input-padding-y-sm
       $input-padding-x-sm;
     font-size: $btn-font-size-sm;
-    vertical-align: -0.1px;
+    vertical-align: 0.1px;
   }
 }
 
 .prepand,
 .append {
-  // box-shadow: $input-box-shadow;
+  box-shadow: $input-box-shadow;
   transition: $input-transition;
-  border: $gray-20 2px solid;
+  border: $gray-20 1px solid;
   padding: $input-padding-y 2 * $input-padding-x;
   color: $gray-70;
 
   &:focus {
     outline: 0;
-    border: $primary 2px solid;
+    box-shadow: $box-shadow-focus;
+    border: $primary 1px solid;
   }
 }
 
 .prepand {
   border-radius: $input-border-radius 0 0 $input-border-radius;
   font-size: $input-font-size;
+  border-right: transparent 1px solid;
 
   &.prepand-lg {
     padding: $input-padding-y-lg 2 * $input-padding-x-lg;
@@ -85,6 +88,8 @@
 
 .append {
   border-radius: 0 $border-radius $input-border-radius 0;
+  font-size: $input-font-size;
+  border-left: transparent 1px solid;
 
   &.append-lg {
     padding: $input-padding-y-lg 2 * $input-padding-x-lg;
