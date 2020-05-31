@@ -31,7 +31,7 @@ import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers from './store/reducers';
 import Transition from '../Transition';
 var AutoComplete = function (_a) {
-    var className = _a.className, _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.size, size = _c === void 0 ? 40 : _c, onKeyPress = _a.onKeyPress;
+    var className = _a.className, _b = _a.data, data = _b === void 0 ? [] : _b, _c = _a.size, size = _c === void 0 ? 40 : _c, _d = _a.inputSize, inputSize = _d === void 0 ? 'small' : _d, onKeyPress = _a.onKeyPress;
     var classes = cxs(className, prefix + "-autocomplete");
     var suggestions = useSelector(function (state) {
         return state.finder.suggestions;
@@ -39,7 +39,7 @@ var AutoComplete = function (_a) {
     var keyword = useSelector(function (state) {
         return state.finder.keyword;
     });
-    var _d = useState(true), inputEmpty = _d[0], setInputEmpty = _d[1];
+    var _e = useState(true), inputEmpty = _e[0], setInputEmpty = _e[1];
     var dispatch = useDispatch();
     useEffect(function () {
         dispatch(initSuggestions(data));
@@ -52,7 +52,7 @@ var AutoComplete = function (_a) {
         return { key: item.key, value: item.suggestion };
     });
     return (React.createElement("div", { className: classes },
-        React.createElement(Input, { value: keyword, onKeyPress: onKeyPress, size: size, onChange: function (e) {
+        React.createElement(Input, { inputSize: inputSize, value: keyword, onKeyPress: onKeyPress, size: size, onChange: function (e) {
                 var target = e.target;
                 if (target.value) {
                     setInputEmpty(false);

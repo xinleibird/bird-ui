@@ -13,6 +13,7 @@ interface AutoCompleteProps {
   className?: string;
   data: string[];
   size?: number;
+  inputSize?: 'large' | 'small';
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
@@ -20,6 +21,7 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = ({
   className,
   data = [],
   size = 40,
+  inputSize = 'small',
   onKeyPress,
 }) => {
   const classes = cxs(className, `${prefix}-autocomplete`);
@@ -51,6 +53,7 @@ const AutoComplete: FunctionComponent<AutoCompleteProps> = ({
   return (
     <div className={classes}>
       <Input
+        inputSize={inputSize}
         value={keyword}
         onKeyPress={onKeyPress}
         size={size}

@@ -16,10 +16,13 @@
 }
 
 .#{$prefix}-input {
-  box-shadow: $input-box-shadow;
+  // box-shadow: $input-box-shadow;
+  box-shadow: none;
   transition: $input-transition;
-  border: $gray-20 1px solid;
+  border: $gray-20 2px solid;
   padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
+
+  border-radius: 0;
 
   background-color: $white;
 
@@ -33,7 +36,7 @@
 
   &:focus {
     outline: 0;
-    border: $primary 1px solid;
+    border: $primary 2px solid;
   }
 
   &.input-lg {
@@ -53,15 +56,15 @@
 
 .prepand,
 .append {
-  box-shadow: $input-box-shadow;
+  // box-shadow: $input-box-shadow;
   transition: $input-transition;
-  border: $gray-20 1px solid;
+  border: $gray-20 2px solid;
   padding: $input-padding-y 2 * $input-padding-x;
   color: $gray-70;
 
   &:focus {
     outline: 0;
-    border: $primary 1px solid;
+    border: $primary 2px solid;
   }
 }
 
