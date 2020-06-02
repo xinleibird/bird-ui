@@ -4,7 +4,8 @@
   "scripts": {
     "start": "dumi dev",
     "docs:build": "dumi build",
-    "build": "father-build",
+    "build": "npm run docs:build",
+    "build:father": "father-build",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "clean": "rimraf dist",
     "test": "umi-test --passWithNoTests",
