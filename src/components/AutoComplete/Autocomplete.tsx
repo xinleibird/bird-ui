@@ -2,7 +2,7 @@ import cxs from 'classnames';
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
-import { Input } from '../../main';
+import Input from './index';
 import List from '../List';
 import prefix from '../prefix';
 import Transition from '../Transition';

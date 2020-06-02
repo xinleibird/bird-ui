@@ -3,7 +3,7 @@ import { render, fireEvent, screen } from '@testing-library/react';
 
 import '@testing-library/jest-dom';
 
-import { Alert } from '../../main';
+import Alert from './index';
 
 describe('test Alert component', () => {
   it('<Alert> should be render by default', () => {
