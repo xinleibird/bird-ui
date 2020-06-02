@@ -7,7 +7,6 @@
     "jsx": "react",
     "moduleResolution": "Node",
     "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": false,
     "sourceMap": true,
     "newLine": "lf",
     "typeRoots": ["src/@types", "node_modules/@types"]
