@@ -34,7 +34,6 @@
     "build:asset": "ncp src/components/Icon/icons/assets/ dist/components/Icon/icons/assets/",
     "build:site": "react-scripts build",
     "build:dist": "npm run clean && npm run build:js && npm run build:css && npm run build:asset",
-    "build:travis": "yarn clean && yarn build:js && yarn build:css && yarn build:asset",
     "prepare": "npm run build"
   },
   "eslintConfig": {
