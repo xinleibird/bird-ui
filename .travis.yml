@@ -20,5 +20,5 @@ script:
   - npm -v
   - yarn -v
   - echo "Testing Started ..."
-  - yarn test
+  - npm run test
   - echo "Testing Finished."
