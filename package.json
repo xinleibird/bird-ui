@@ -7,8 +7,8 @@
     "build": "father-build",
     "prettier": "prettier --write \"**/*.{js,jsx,tsx,ts,less,md,json}\"",
     "clean": "rimraf dist",
-    "test": "umi-test",
-    "test:coverage": "umi-test --coverage",
+    "test": "umi-test --passWithNoTests",
+    "test:coverage": "umi-test --coverage --passWithNoTests",
     "deploy": "gh-pages -d dist -r https://github.com/xinleibird/bird-ui.git",
     "push": "npm run docs:build && npm run deploy"
   },
