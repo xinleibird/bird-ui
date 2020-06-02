@@ -1,19 +1,22 @@
-import React, { FunctionComponent, KeyboardEvent, HtmlHTMLAttributes } from 'react';
-import MenuItem from './components/Menu/MenuItem';
-import { Menu, Autocomplete } from './main';
+import React, { FunctionComponent, useState } from 'react';
+import { Button } from './main';
 // import Auto from './components/AutoComplete';
 
 const ShowComponents: FunctionComponent = () => {
+  const [showBlock, setShow] = useState(false);
   return (
-    <Autocomplete
-      data={['a', 'ab', 'abc']}
-      onKeyPress={(e) => {
-        if (e.key === 'Enter') {
-          const tar = e.target as React.KeyboardEvent & HTMLInputElement;
-          tar.value = '';
-        }
-      }}
-    />
+    <>
+      <Button
+        onClick={() => {
+          setShow(!showBlock);
+        }}
+      >
+        Show Block
+      </Button>
+      {showBlock && (
+        <div style={{ background: '#b8b8b8', width: '128px', height: '128px' }}></div>
+      )}
+    </>
   );
 };
 
