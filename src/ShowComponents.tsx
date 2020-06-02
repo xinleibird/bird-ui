@@ -1,5 +1,5 @@
 import React, { FunctionComponent, useState } from 'react';
-import { Button } from './main';
+import { Button, Icon } from './main';
 // import Auto from './components/AutoComplete';
 
 const ShowComponents: FunctionComponent = () => {
