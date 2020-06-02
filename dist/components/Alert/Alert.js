@@ -34,8 +34,7 @@ var Alert = function (_a) {
                 alertIcon,
                 React.createElement("div", { className: "alert-message-wrapper" },
                     closeable && (React.createElement(Icon.Close, { "data-testid": "alert-close-btn", className: "alert-close-btn", onClick: function () {
-                            var _a;
-                            (_a = onClose) === null || _a === void 0 ? void 0 : _a();
+                            onClose === null || onClose === void 0 ? void 0 : onClose();
                             setShow(false);
                         } })),
                     message,
