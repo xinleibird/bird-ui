@@ -33,7 +33,8 @@
     "build:css": "node-sass -r src -o dist --source-map=true --output-style=compressed --linefeed=lf",
     "build:asset": "ncp src/components/Icon/icons/assets/ dist/components/Icon/icons/assets/",
     "build:site": "react-scripts build",
-    "build:dist": "npm run clean && npm run build:js && npm run build:css && npm run build:asset"
+    "build:dist": "npm run clean && npm run build:js && npm run build:css && npm run build:asset",
+    "prepare": "npm run build:dist"
   },
   "eslintConfig": {
     "extends": "react-app"
