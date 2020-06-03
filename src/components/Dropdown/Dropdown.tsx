@@ -1,4 +1,5 @@
 import React, { FunctionComponent, useEffect, useRef, HtmlHTMLAttributes } from 'react';
+import cxs from 'classnames';
 import prefix from '../prefix';
 
 interface BaseDropdownProps {
@@ -8,6 +9,7 @@ interface BaseDropdownProps {
 export type DropdownProps = Partial<HtmlHTMLAttributes<HTMLDivElement> & BaseDropdownProps>;
 
 const Dropdown: FunctionComponent<DropdownProps> = ({
+  className,
   onClickOutside = () => {},
   children,
 }) => {
@@ -30,9 +32,10 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
     };
   }, [onClickOutside]);
 
+  const classes = cxs(`${prefix}-dropdown`, className);
   return (
     <div
-      className={`${prefix}-dropdown`}
+      className={classes}
       ref={(r) => {
         ref.current = r;
       }}

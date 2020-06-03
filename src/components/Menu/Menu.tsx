@@ -68,6 +68,7 @@ const Menu: FunctionComponent<MenuProps> = ({
 
   return (
     <Dropdown
+      className={sticky ? 'sticky' : ''}
       onClickOutside={(e) => {
         dispatch(closeAllSubMenu());
       }}
