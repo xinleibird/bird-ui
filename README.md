@@ -60,8 +60,8 @@ const App = () => {
 <br />
 <br />
 
-## <img src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo48.png" width="32px" /> Contact Me
+## 📧 Contact Me
 
-- xinleibird@gmail.com
+- xinleibird@gmail.com <img src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo48.png" width="32px" />
 
 [1]: https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/avatar.png
