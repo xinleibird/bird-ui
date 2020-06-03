@@ -4,9 +4,10 @@ import { Provider, useDispatch } from 'react-redux';
 import { createStore } from 'redux';
 import prefix from '../prefix';
 import { MenuItemProps } from './MenuItem';
-import { setItemActiveIndex, toggleSubMenuShowIndex } from './store/actions';
+import { setItemActiveIndex, toggleSubMenuShowIndex, closeAllSubMenu } from './store/actions';
 import reducers from './store/reducers';
 import { SubMenuProps } from './SubMenu';
+import Dropdown from '../Dropdown';
 
 export const renderChildren = (children: ReactNode, index = '') => {
   return React.Children.map(children, (child, i) => {
@@ -66,9 +67,15 @@ const Menu: FunctionComponent<MenuProps> = ({
   const rendered = renderChildren(children);
 
   return (
-    <ul className={classes} style={style}>
-      {rendered}
-    </ul>
+    <Dropdown
+      onClickOutside={(e) => {
+        dispatch(closeAllSubMenu());
+      }}
+    >
+      <ul className={classes} style={style}>
+        {rendered}
+      </ul>
+    </Dropdown>
   );
 };
 

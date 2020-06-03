@@ -23,6 +23,9 @@ export const index = (
       }
       return { active: state.active, show: state.show };
 
+    case ACTION_TYPE.CLOSE_ALL_SUBMENU:
+      return { active: state.active, show: [] };
+
     default:
       return state;
   }

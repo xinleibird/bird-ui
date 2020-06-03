@@ -21,7 +21,7 @@ interface BaseButtonProps {
   onlyIcon?: boolean;
 }
 
-export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLElement> & BaseButtonProps>;
+export type ButtonProps = Partial<ButtonHTMLAttributes<HTMLButtonElement> & BaseButtonProps>;
 
 const Button: FunctionComponent<ButtonProps> = ({
   className,
