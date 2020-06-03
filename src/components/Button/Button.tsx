@@ -50,13 +50,16 @@ const Button: FunctionComponent<ButtonProps> = ({
         className={classes}
         disabled={disabled || isLoading}
         type={type}
-        {...restProps}
         onClickCapture={(e) => {
           e.preventDefault();
           return new Promise((resolve) => {
             resolve(onLoading(setLoading));
           });
         }}
+        onSubmitCapture={(e) => {
+          e.preventDefault();
+        }}
+        {...restProps}
       >
         <Transition in={isLoading} animationClassName="fade-in">
           <Icon.CircleNotch animate="spin" size={size} />

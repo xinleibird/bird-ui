@@ -9,13 +9,14 @@ import React, {
 import { IconProps } from '../Icon/Icon';
 import prefix from '../prefix';
 
-interface InputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
+interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
   inputSize?: 'large' | 'small';
   icon?: ReactElement;
   disabled?: boolean;
   prepand?: string | ReactElement;
   append?: string | ReactElement;
 }
+type InputProps = Partial<InputHTMLAttributes<HTMLElement>> & BaseInputProps;
 
 const Input: FunctionComponent<InputProps> = ({
   className,
@@ -55,7 +56,14 @@ const Input: FunctionComponent<InputProps> = ({
       <span className={groupClasses}>
         {prepand && <button className={prepandClasses}>{prepand}</button>}
         <span className={`icon-anchor${inputSize ? '-' + inputSize : ''}`}>
-          <input className={inputClasses} size={size} {...restArgs} />
+          <input
+            className={inputClasses}
+            size={size}
+            onSubmitCapture={(e) => {
+              e.preventDefault();
+            }}
+            {...restArgs}
+          />
           {renderedIcon}
         </span>
         {append && <button className={appendClasses}>{append}</button>}

@@ -1,5 +1,5 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, useEffect, useState } from 'react';
+import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
 import Input from '../Input';
@@ -14,6 +14,8 @@ interface AutocompleteProps {
   data: string[];
   size?: number;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  name?: string;
+  id?: string;
 }
 
 const Autocomplete: FunctionComponent<AutocompleteProps> = ({
@@ -21,6 +23,8 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   data = [],
   size = 40,
   onKeyPress,
+  name,
+  id,
 }) => {
   const classes = cxs(className, `${prefix}-autocomplete`);
 
@@ -33,6 +37,8 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   });
 
   const [inputEmpty, setInputEmpty] = useState(true);
+
+  const inputRef = useRef((null as unknown) as EventTarget & HTMLInputElement);
 
   const dispatch = useDispatch();
 
@@ -48,15 +54,25 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
       return { key: item.key, value: item.suggestion };
     });
 
+  const liClickMethod = (item: string) => {
+    dispatch(updateSuggestions(item));
+    inputRef.current.focus();
+  };
+
   return (
     <div className={classes}>
       <Input
+        name={name}
+        id={id}
         inputSize="small"
         value={keyword}
         onKeyPress={onKeyPress}
         size={size}
         onChange={(e) => {
           const target = e.target as EventTarget & HTMLInputElement;
+
+          inputRef.current = target;
+
           if (target.value) {
             setInputEmpty(false);
           } else {
@@ -66,7 +82,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
         }}
       />
       <Transition in={!inputEmpty}>
-        <List data={filtered} />
+        <List data={filtered} clickMethod={liClickMethod} />
       </Transition>
     </div>
   );

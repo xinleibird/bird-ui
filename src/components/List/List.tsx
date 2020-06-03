@@ -1,7 +1,5 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, HTMLAttributes, LiHTMLAttributes, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
-import { updateSuggestions } from '../Autocomplete/store/actions';
 import prefix from '../prefix';
 
 export const Ul: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
@@ -42,20 +40,24 @@ export interface ListItem {
 export interface ListProps {
   className?: string;
   data: ListItem[];
+  clickMethod?: (value: string) => any;
 }
 
-const List: FunctionComponent<ListProps> = ({ className, data = [], ...args }) => {
+const List: FunctionComponent<ListProps> = ({
+  className,
+  data = [],
+  clickMethod = () => {},
+  ...args
+}) => {
   const classes = cxs(className, `${prefix}-list`);
-
-  const dispatch = useDispatch();
 
   return (
     <Ul className={classes} {...args}>
       {data.map((item) => {
         return (
           <Li
-            onClick={(e) => {
-              dispatch(updateSuggestions(item.value));
+            onClickCapture={(e) => {
+              clickMethod(item.value);
             }}
             key={item.key}
           >
