@@ -1,6 +1,6 @@
 {
   "name": "@xinleibird/bird-ui",
-  "version": "0.1.30",
+  "version": "0.1.31",
   "files": [
     "dist/**/*"
   ],
@@ -89,6 +89,9 @@
     ],
     "src/**/*.{ts,tsx,scss,md}": [
       "prettier --write"
+    ],
+    "src/**/*.{ts,tsx,scss}": [
+      "npm run build"
     ]
   }
 }
