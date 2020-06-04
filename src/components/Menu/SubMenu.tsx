@@ -35,7 +35,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
       ? false
       : true;
 
-  const subMenuClasses = cxs(className, 'submenu', {
+  const subMenuClasses = cxs('submenu', className, {
     disabled,
     opened: subMenuOpened,
   });

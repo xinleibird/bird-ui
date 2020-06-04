@@ -25,7 +25,7 @@ const Alert: FunctionComponent<AlertProps> = ({
 }) => {
   const [couldShow, setShow] = useState(true);
 
-  const classes = cxs(className, `${prefix}-alert`, {
+  const classes = cxs(`${prefix}-alert`, className, {
     [`alert-${type}`]: type,
   });
   let alertIcon: {} | null | undefined;

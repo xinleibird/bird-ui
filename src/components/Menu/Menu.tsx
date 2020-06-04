@@ -58,7 +58,7 @@ const Menu: FunctionComponent<MenuProps> = ({
       });
     }
   }
-  const classes = cxs(className, `${prefix}-menu`, {
+  const classes = cxs(`${prefix}-menu`, className, {
     vertical: direction === 'vertical',
     horizontal: direction === 'horizontal',
     sticky,

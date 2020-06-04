@@ -37,7 +37,7 @@ const Button: FunctionComponent<ButtonProps> = ({
 }) => {
   const [isLoading, setLoading] = useState(loading);
 
-  const classes = cxs(className, `${prefix}-btn`, {
+  const classes = cxs(`${prefix}-btn`, className, {
     'btn-lg': size === 'large',
     'btn-sm': size === 'small',
     [`btn-${btnType}`]: btnType,

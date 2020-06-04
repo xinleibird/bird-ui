@@ -18,7 +18,7 @@ const Dialog: FunctionComponent<DialogProps> = ({
 }) => {
   const [couldShow, setShow] = useState(true);
 
-  const classes = cxs(className, `${prefix}-dialog`);
+  const classes = cxs(`${prefix}-dialog`, className);
 
   useEffect(() => {
     document.body.style.position = 'relative';

@@ -17,7 +17,7 @@ const Link: FunctionComponent<LinkProps> = ({
   disabled = false,
   ...restProps
 }) => {
-  const classes = cxs(className, `${prefix}-btn`, 'link', {
+  const classes = cxs(`${prefix}-btn`, 'link', className, {
     'btn-lg': size === 'large',
     'btn-sm': size === 'small',
     disabled,

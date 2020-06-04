@@ -34,8 +34,7 @@ const Input: FunctionComponent<InputProps> = ({
 
   const renderedIcon = icon && React.cloneElement(Icon, iconProp);
 
-  const groupClasses = cxs(className, {
-    [`${prefix}-input-group`]: prefix,
+  const groupClasses = cxs(`${prefix}-input-group`, className, {
     disabled,
   });
   const inputClasses = cxs({

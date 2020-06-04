@@ -26,7 +26,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   name,
   id,
 }) => {
-  const classes = cxs(className, `${prefix}-autocomplete`);
+  const classes = cxs(`${prefix}-autocomplete`, className);
 
   const suggestions = useSelector((state: DefaultRootState & { finder: SuggestionsType }) => {
     return state.finder.suggestions;

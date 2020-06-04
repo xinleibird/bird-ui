@@ -7,7 +7,7 @@ export const Ul: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
   children,
   ...args
 }) => {
-  const classes = cxs(className, `${prefix}-ul`);
+  const classes = cxs(`${prefix}-ul`, className);
   return useMemo(() => {
     return (
       <ul className={classes} {...args}>
@@ -22,7 +22,7 @@ export const Li: FunctionComponent<LiHTMLAttributes<HTMLElement>> = ({
   children,
   ...args
 }) => {
-  const classes = cxs(className, `${prefix}-li`);
+  const classes = cxs(`${prefix}-li`, className);
   return useMemo(() => {
     return (
       <li className={classes} {...args}>
@@ -49,7 +49,7 @@ const List: FunctionComponent<ListProps> = ({
   clickMethod = () => {},
   ...args
 }) => {
-  const classes = cxs(className, `${prefix}-list`);
+  const classes = cxs(`${prefix}-list`, className);
 
   return (
     <Ul className={classes} {...args}>

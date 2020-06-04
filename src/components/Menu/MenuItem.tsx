@@ -28,7 +28,7 @@ const MenuItem: FunctionComponent<MenuItemProps> = ({
   );
   const dispatch = useDispatch();
 
-  const classes = cxs(className, 'menu-item', {
+  const classes = cxs('menu-item', className, {
     disabled: disabled,
     active: activeIndex === index,
   });

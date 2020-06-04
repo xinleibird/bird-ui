@@ -21,7 +21,7 @@ const Icon: FunctionComponent<IconProps> = ({
   color = '',
   ...restArgs
 }) => {
-  const classes = cxs(className, `${prefix}-icon`, {
+  const classes = cxs(`${prefix}-icon`, className, {
     'icon-lg': size === 'large',
     'icon-sm': size === 'small',
     [`animate-${animate}`]: animate,
