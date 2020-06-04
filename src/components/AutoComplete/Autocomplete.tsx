@@ -62,6 +62,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
 
   return (
     <Dropdown
+      style={{ display: 'inline' }}
       onClickOutside={() => {
         setInputEmpty(true);
       }}

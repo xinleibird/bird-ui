@@ -12,6 +12,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
   className,
   onClickOutside = () => {},
   children,
+  ...args
 }) => {
   const ref = useRef(null as any);
 
@@ -39,6 +40,7 @@ const Dropdown: FunctionComponent<DropdownProps> = ({
       ref={(r) => {
         ref.current = r;
       }}
+      {...args}
     >
       {children}
     </div>
