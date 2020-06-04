@@ -3,7 +3,7 @@ import cxs from 'classnames';
 import prefix from '../prefix';
 
 interface BaseDropdownProps {
-  onClickOutside?: (e: MouseEvent) => void;
+  onClickOutside: (e: MouseEvent) => void;
 }
 
 export type DropdownProps = Partial<HtmlHTMLAttributes<HTMLDivElement> & BaseDropdownProps>;

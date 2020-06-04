@@ -1,7 +1,8 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, useEffect, useState, useRef } from 'react';
+import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
+import Dropdown from '../Dropdown';
 import Input from '../Input';
 import List from '../List';
 import prefix from '../prefix';
@@ -60,31 +61,42 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   };
 
   return (
-    <div className={classes}>
-      <Input
-        name={name}
-        id={id}
-        inputSize="small"
-        value={keyword}
-        onKeyPress={onKeyPress}
-        size={size}
-        onChange={(e) => {
-          const target = e.target as EventTarget & HTMLInputElement;
+    <Dropdown
+      onClickOutside={() => {
+        setInputEmpty(true);
+      }}
+    >
+      <div className={classes}>
+        <Input
+          name={name}
+          id={id}
+          inputSize="small"
+          value={keyword}
+          onKeyPress={onKeyPress}
+          size={size}
+          onFocus={() => {
+            if (keyword) {
+              setInputEmpty(false);
+            }
+          }}
+          onChange={(e) => {
+            const target = e.target as EventTarget & HTMLInputElement;
 
-          inputRef.current = target;
+            inputRef.current = target;
 
-          if (target.value) {
-            setInputEmpty(false);
-          } else {
-            setInputEmpty(true);
-          }
-          dispatch(updateSuggestions(target.value));
-        }}
-      />
-      <Transition in={!inputEmpty}>
-        <List data={filtered} clickMethod={liClickMethod} />
-      </Transition>
-    </div>
+            if (target.value) {
+              setInputEmpty(false);
+            } else {
+              setInputEmpty(true);
+            }
+            dispatch(updateSuggestions(target.value));
+          }}
+        />
+        <Transition in={!inputEmpty}>
+          <List data={filtered} clickMethod={liClickMethod} />
+        </Transition>
+      </div>
+    </Dropdown>
   );
 };
 
