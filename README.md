@@ -15,9 +15,16 @@
   </a>
 </p>
 
-<h1 align="center">Bird UI Design</h1>
-<h3 align="center">A Personal React UI Library</h3>
-<p align="center"> Go to github to visit this <a href="https://github.com/xinleibird/bird-ui">repo</a></p>
+<div align="center">
+  <h1>Bird UI Design</h1>
+  <h3>A Personal React UI Library</h3>
+  <p> Go github to get this <a href="https://github.com/xinleibird/bird-ui">repo</a></p>
+</div>
+
+<br />
+<br />
+
+> **Note:** This personal component library is only used for technical show, has not been fully tested, please use it with caution.
 
 <br />
 <br />
@@ -62,6 +69,6 @@ const App = () => {
 
 ## 📧 Contact Me
 
-- xinleibird@gmail.com <img src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo48.png" width="32px" />
+xinleibird@gmail.com <img src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo48.png" width="32px" />
 
 [1]: https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/avatar.png
