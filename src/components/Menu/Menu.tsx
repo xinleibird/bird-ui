@@ -1,28 +1,10 @@
 import cxs from 'classnames';
-import React, { CSSProperties, FunctionComponent, ReactElement, ReactNode } from 'react';
+import React, { CSSProperties, FunctionComponent, ReactNode } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { createStore } from 'redux';
-import prefix from '../prefix';
-import { MenuItemProps } from './MenuItem';
-import { setItemActiveIndex, toggleSubMenuShowIndex, closeAllSubMenu } from './store/actions';
+import { Dropdown, prefix, renderChildren } from '../';
+import { closeAllSubMenu, setItemActiveIndex, toggleSubMenuShowIndex } from './store/actions';
 import reducers from './store/reducers';
-import { SubMenuProps } from './SubMenu';
-import Dropdown from '../Dropdown';
-
-export const renderChildren = (children: ReactNode, index = '') => {
-  return React.Children.map(children, (child, i) => {
-    const itemElement = child as ReactElement<SubMenuProps & MenuItemProps>;
-    if (
-      itemElement.props.menuCheckId === 'MenuItem' ||
-      itemElement.props.menuCheckId === 'SubMenu'
-    ) {
-      return React.cloneElement(itemElement, {
-        index: index ? `${index}-${i}` : `${i}`,
-        key: index ? `${index}-${i}` : `${i}`,
-      });
-    }
-  });
-};
 
 export interface MenuProps {
   className?: string;
@@ -64,7 +46,7 @@ const Menu: FunctionComponent<MenuProps> = ({
     sticky,
   });
 
-  const rendered = renderChildren(children);
+  const rendered = renderChildren(children, ['MenuItem', 'SubMenu']);
 
   return (
     <Dropdown

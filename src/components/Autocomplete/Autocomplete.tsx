@@ -2,11 +2,7 @@ import cxs from 'classnames';
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
-import Dropdown from '../Dropdown';
-import Input from '../Input';
-import List from '../List';
-import prefix from '../prefix';
-import Transition from '../Transition';
+import { Dropdown, Input, List, prefix, Transition } from '../';
 import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers, { SuggestionsType } from './store/reducers';
 

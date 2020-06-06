@@ -1,6 +1,6 @@
 import cxs from 'classnames';
 import React, { AnchorHTMLAttributes, FunctionComponent, ReactNode, useMemo } from 'react';
-import prefix from '../prefix';
+import { prefix } from '../';
 
 interface BaseLinkProps {
   size?: 'large' | 'small';

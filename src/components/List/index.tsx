@@ -1,11 +1,9 @@
-// export { default } from './List';
-
-import List, { Li, Ul, ListProps } from './List';
-import { FunctionComponent, HTMLAttributes, LiHTMLAttributes } from 'react';
+import { FunctionComponent } from 'react';
+import List, { Li, LiProps, ListProps, Ul, UlProps } from './List';
 
 export type ListComponent = FunctionComponent<ListProps> & {
-  Ul: FunctionComponent<LiHTMLAttributes<HTMLElement>>;
-  Li: FunctionComponent<HTMLAttributes<HTMLElement>>;
+  Ul: FunctionComponent<UlProps>;
+  Li: FunctionComponent<LiProps>;
 };
 
 const ReferList = List as ListComponent;

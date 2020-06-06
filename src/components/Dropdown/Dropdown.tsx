@@ -1,6 +1,6 @@
-import React, { FunctionComponent, useEffect, useRef, HtmlHTMLAttributes } from 'react';
 import cxs from 'classnames';
-import prefix from '../prefix';
+import React, { FunctionComponent, HtmlHTMLAttributes, useEffect, useRef } from 'react';
+import { prefix } from '../';
 
 interface BaseDropdownProps {
   onClickOutside: (e: MouseEvent) => void;

@@ -1,12 +1,9 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, HTMLAttributes, LiHTMLAttributes, useMemo } from 'react';
-import prefix from '../prefix';
+import { prefix } from '../';
 
-export const Ul: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
-  className,
-  children,
-  ...args
-}) => {
+export type UlProps = HTMLAttributes<HTMLElement>;
+export const Ul: FunctionComponent<UlProps> = ({ className, children, ...args }) => {
   const classes = cxs(`${prefix}-ul`, className);
   return useMemo(() => {
     return (
@@ -17,11 +14,8 @@ export const Ul: FunctionComponent<HTMLAttributes<HTMLElement>> = ({
   }, [classes, args, children]);
 };
 
-export const Li: FunctionComponent<LiHTMLAttributes<HTMLElement>> = ({
-  className,
-  children,
-  ...args
-}) => {
+export type LiProps = LiHTMLAttributes<HTMLElement>;
+export const Li: FunctionComponent<LiProps> = ({ className, children, ...args }) => {
   const classes = cxs(`${prefix}-li`, className);
   return useMemo(() => {
     return (
@@ -32,14 +26,14 @@ export const Li: FunctionComponent<LiHTMLAttributes<HTMLElement>> = ({
   }, [classes, args, children]);
 };
 
-export interface ListItem {
+export interface ListItemType {
   key: string;
   value: string;
 }
 
 export interface ListProps {
   className?: string;
-  data: ListItem[];
+  data: ListItemType[];
   clickMethod?: (value: string) => any;
 }
 

@@ -6,9 +6,7 @@ import React, {
   useMemo,
   useState,
 } from 'react';
-import Icon from '../Icon';
-import prefix from '../prefix';
-import Transition from '../Transition';
+import { Icon, prefix, Transition } from '../';
 
 type SetLoadingStateCallback = (loadingState: boolean) => void;
 interface BaseButtonProps {

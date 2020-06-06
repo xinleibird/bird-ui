@@ -6,8 +6,7 @@ import React, {
   ReactElement,
   useMemo,
 } from 'react';
-import { IconProps } from '../Icon/Icon';
-import prefix from '../prefix';
+import { prefix } from '../';
 
 interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
   inputSize?: 'large' | 'small';
@@ -28,7 +27,7 @@ const Input: FunctionComponent<InputProps> = ({
   append,
   ...restArgs
 }) => {
-  const Icon = icon as FunctionComponentElement<IconProps>;
+  const Icon = icon as FunctionComponentElement<any>;
 
   const iconProp = inputSize ? { size: inputSize } : {};
 

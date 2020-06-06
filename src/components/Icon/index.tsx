@@ -6,14 +6,14 @@ import IconCircleNotch from './icons/IconCircleNotch';
 import IconClose from './icons/IconClose';
 import IconError from './icons/IconError';
 import IconInfo from './icons/IconInfo';
+import IconSearch from './icons/IconSearch';
 import IconSetting from './icons/IconSetting';
 import IconSlider from './icons/IconSlider';
 import IconSuccess from './icons/IconSuccess';
 import IconTable from './icons/IconTable';
 import IconWarning from './icons/IconWarning';
-import IconSearch from './icons/IconSearch';
 
-export type IconComponent = FunctionComponent<IconProps> & {
+type IconComponent = FunctionComponent<IconProps> & {
   AngleDown: FunctionComponent<IconProps>;
   AngleRight: FunctionComponent<IconProps>;
   Close: FunctionComponent<IconProps>;
@@ -29,7 +29,6 @@ export type IconComponent = FunctionComponent<IconProps> & {
 };
 
 const ReferIcon = Icon as IconComponent;
-
 ReferIcon.AngleDown = IconAngleDown;
 ReferIcon.AngleRight = IconAngleRight;
 ReferIcon.Close = IconClose;
