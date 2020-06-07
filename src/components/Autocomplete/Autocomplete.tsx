@@ -5,6 +5,7 @@ import { createStore } from 'redux';
 import { Dropdown, Input, List, prefix, Transition } from '../';
 import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers, { SuggestionsType } from './store/reducers';
+import { ListItemType } from '../List/List';
 
 interface AutocompleteProps {
   className?: string;
@@ -48,11 +49,11 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
       return item.isSuggested;
     })
     .map((item) => {
-      return { key: item.key, value: item.suggestion };
+      return { key: item.key, node: item.suggestion };
     });
 
-  const liClickMethod = (item: string) => {
-    dispatch(updateSuggestions(item));
+  const liClickMethod = (item: ListItemType) => {
+    dispatch(updateSuggestions(item.node?.toString()));
     inputRef.current.focus();
   };
 

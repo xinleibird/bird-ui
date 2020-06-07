@@ -11,7 +11,7 @@ export interface SubMenuProps {
   disabled?: boolean;
   icon?: ReactElement;
   children?: ReactNode;
-  readonly renderSign?: 'SubMenu';
+  readonly rendersign?: 'SubMenu';
 }
 
 const SubMenu: FunctionComponent<SubMenuProps> = ({
@@ -79,7 +79,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
 };
 
 SubMenu.defaultProps = {
-  renderSign: 'SubMenu',
+  rendersign: 'SubMenu',
 };
 
 export default SubMenu;

@@ -48,17 +48,25 @@ const Menu: FunctionComponent<MenuProps> = ({
 
   const rendered = renderChildren(children, ['MenuItem', 'SubMenu']);
 
+  if (direction === 'horizontal') {
+    return (
+      <Dropdown
+        className={sticky ? 'sticky' : ''}
+        onClickOutside={(e) => {
+          dispatch(closeAllSubMenu());
+        }}
+      >
+        <ul className={classes} style={style}>
+          {rendered}
+        </ul>
+      </Dropdown>
+    );
+  }
+
   return (
-    <Dropdown
-      className={sticky ? 'sticky' : ''}
-      onClickOutside={(e) => {
-        dispatch(closeAllSubMenu());
-      }}
-    >
-      <ul className={classes} style={style}>
-        {rendered}
-      </ul>
-    </Dropdown>
+    <ul className={classes} style={style}>
+      {rendered}
+    </ul>
   );
 };
 

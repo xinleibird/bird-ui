@@ -1,8 +1,18 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, HTMLAttributes, LiHTMLAttributes, useMemo } from 'react';
+import React, {
+  FunctionComponent,
+  HTMLAttributes,
+  LiHTMLAttributes,
+  useMemo,
+  ReactNode,
+} from 'react';
 import { prefix } from '../';
 
-export type UlProps = HTMLAttributes<HTMLElement>;
+interface BaseUlProps {
+  readonly rendersign?: string;
+}
+
+export type UlProps = Partial<HTMLAttributes<HTMLElement> & BaseUlProps>;
 export const Ul: FunctionComponent<UlProps> = ({ className, children, ...args }) => {
   const classes = cxs(`${prefix}-ul`, className);
   return useMemo(() => {
@@ -14,7 +24,15 @@ export const Ul: FunctionComponent<UlProps> = ({ className, children, ...args })
   }, [classes, args, children]);
 };
 
-export type LiProps = LiHTMLAttributes<HTMLElement>;
+Ul.defaultProps = {
+  rendersign: 'Ul',
+};
+
+interface BaseLiProps {
+  readonly rendersign?: string;
+}
+
+export type LiProps = Partial<LiHTMLAttributes<HTMLElement> & BaseLiProps>;
 export const Li: FunctionComponent<LiProps> = ({ className, children, ...args }) => {
   const classes = cxs(`${prefix}-li`, className);
   return useMemo(() => {
@@ -26,20 +44,24 @@ export const Li: FunctionComponent<LiProps> = ({ className, children, ...args })
   }, [classes, args, children]);
 };
 
+Li.defaultProps = {
+  rendersign: 'Li',
+};
+
 export interface ListItemType {
   key: string;
-  value: string;
+  node: ReactNode;
 }
 
 export interface ListProps {
   className?: string;
   data: ListItemType[];
-  clickMethod?: (value: string) => any;
+  clickMethod?: (item: ListItemType) => any;
 }
 
 const List: FunctionComponent<ListProps> = ({
   className,
-  data = [],
+  data,
   clickMethod = () => {},
   ...args
 }) => {
@@ -51,11 +73,11 @@ const List: FunctionComponent<ListProps> = ({
         return (
           <Li
             onClickCapture={(e) => {
-              clickMethod(item.value);
+              clickMethod(item);
             }}
             key={item.key}
           >
-            {item.value}
+            {item.node}
           </Li>
         );
       })}

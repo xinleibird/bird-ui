@@ -17,14 +17,13 @@ export const debounce = (fn: Function, timeout: number, context?: ThisType<any>)
 
 export const renderChildren = (
   children: ReactNode,
-  renderSigns: string[],
+  rendersigns: string[],
   preIndex?: string
 ) => {
   return React.Children.map(children, (child, index) => {
     const itemElement = child as ReactElement;
-    for (const sign of renderSigns) {
-      if (itemElement.props.renderSign === sign) {
-        // console.log(itemElement.props.renderSign);
+    for (const sign of rendersigns) {
+      if (itemElement.props.rendersign === sign) {
         return React.cloneElement(itemElement, {
           index: preIndex ? `${preIndex}-${index}` : `${index}`,
           key: preIndex ? `${preIndex}-${index}` : `${index}`,
@@ -32,7 +31,7 @@ export const renderChildren = (
       }
     }
     console.warn(
-      `Component just accept ${renderSigns} component, other element could not be rendered.`
+      `Component just accept ${rendersigns} component, but got a <${itemElement.type}> element, this could not be rendered.`
     );
   });
 };
