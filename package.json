@@ -28,7 +28,7 @@
     ]
   },
   "dependencies": {
-    "@xinleibird/bird-ui": "^0.2.1",
+    "@xinleibird/bird-ui": "^0.2.2",
     "react": "^16.13.1"
   },
   "devDependencies": {
