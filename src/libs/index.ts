@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 
-export const debounce = (fn: Function, timeout: number, context?: ThisType<any>) => {
+const debounce = (fn: Function, timeout: number, context?: ThisType<any>) => {
   let timmer: NodeJS.Timeout | number | null = null;
 
   return (...args: any[]) => {
@@ -15,11 +15,7 @@ export const debounce = (fn: Function, timeout: number, context?: ThisType<any>)
   };
 };
 
-export const renderChildren = (
-  children: ReactNode,
-  rendersigns: string[],
-  preIndex?: string
-) => {
+const renderChildren = (children: ReactNode, rendersigns: string[], preIndex?: string) => {
   return React.Children.map(children, (child, index) => {
     const itemElement = child as ReactElement;
     for (const sign of rendersigns) {
@@ -35,3 +31,5 @@ export const renderChildren = (
     );
   });
 };
+
+export default { debounce, renderChildren };

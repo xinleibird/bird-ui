@@ -7,7 +7,7 @@ import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers, { SuggestionsType } from './store/reducers';
 import { ListItemType } from '../List/List';
 
-interface AutocompleteProps {
+export interface AutocompleteProps {
   className?: string;
   data: string[];
   size?: number;
