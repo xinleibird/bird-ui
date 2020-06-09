@@ -1,7 +1,8 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
-import { Icon, libs, Transition } from '../';
+import { Icon, Transition } from '../main';
+import { renderChildren } from '../libs';
 import { toggleSubMenuShowIndex } from './store/actions';
 
 export interface SubMenuProps {
@@ -44,7 +45,7 @@ const SubMenu: FunctionComponent<SubMenuProps> = ({
 
   const dispatch = useDispatch();
 
-  const rendered = libs.renderChildren(children, ['MenuItem', 'SubMenu'], index);
+  const rendered = renderChildren(children, ['MenuItem', 'SubMenu'], index);
 
   return useMemo(() => {
     return (

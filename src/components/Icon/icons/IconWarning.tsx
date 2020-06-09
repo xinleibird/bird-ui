@@ -6,4 +6,8 @@ const IconWarning: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconWarning.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconWarning;

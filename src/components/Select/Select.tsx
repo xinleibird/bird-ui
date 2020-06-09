@@ -1,5 +1,6 @@
 import React, { FunctionComponent, SelectHTMLAttributes } from 'react';
-import { Input, libs, List } from '../';
+import { Input, List } from '../main';
+import { renderChildren } from '../libs';
 // import { Input, List } from '../';
 
 interface BaseSelectProps {
@@ -11,7 +12,7 @@ export type SelectProps = Partial<SelectHTMLAttributes<HTMLSelectElement> & Base
 
 const Select: FunctionComponent<SelectProps> = ({ className, native, children }) => {
   // const classes = cxs(`${prefix}-select`, className);
-  const rendered = libs.renderChildren(children, ['Ul', 'Li']);
+  const rendered = renderChildren(children, ['Ul', 'Li']);
   return (
     <>
       <Input />

@@ -6,4 +6,8 @@ const IconCircleNotch: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconCircleNotch.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconCircleNotch;

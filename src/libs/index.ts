@@ -1,6 +1,6 @@
 import React, { ReactElement, ReactNode } from 'react';
 
-const debounce = (fn: Function, timeout: number, context?: ThisType<any>) => {
+export const debounce = (fn: Function, timeout: number, context?: ThisType<any>) => {
   let timmer: NodeJS.Timeout | number | null = null;
 
   return (...args: any[]) => {
@@ -15,15 +15,29 @@ const debounce = (fn: Function, timeout: number, context?: ThisType<any>) => {
   };
 };
 
-const renderChildren = (children: ReactNode, rendersigns: string[], preIndex?: string) => {
+export const renderChildren = (
+  children: ReactNode,
+  rendersigns: string[],
+  unionProps?: Object,
+  preIndex?: string
+) => {
+  console.log(children);
   return React.Children.map(children, (child, index) => {
     const itemElement = child as ReactElement;
+
     for (const sign of rendersigns) {
       if (itemElement.props.rendersign === sign) {
-        return React.cloneElement(itemElement, {
-          index: preIndex ? `${preIndex}-${index}` : `${index}`,
-          key: preIndex ? `${preIndex}-${index}` : `${index}`,
-        });
+        return React.cloneElement(
+          itemElement,
+          Object.assign(
+            {},
+            {
+              index: preIndex ? `${preIndex}-${index}` : `${index}`,
+              key: preIndex ? `${preIndex}-${index}` : `${index}`,
+            },
+            unionProps
+          )
+        );
       }
     }
     console.warn(
@@ -31,5 +45,3 @@ const renderChildren = (children: ReactNode, rendersigns: string[], preIndex?: s
     );
   });
 };
-
-export default { debounce, renderChildren };

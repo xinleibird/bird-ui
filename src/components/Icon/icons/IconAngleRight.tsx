@@ -6,4 +6,8 @@ const IconAngleRight: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconAngleRight.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconAngleRight;

@@ -1,6 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, useEffect, useMemo, useState } from 'react';
-import { Button, prefix, Transition } from '../';
+import { Button, Transition } from '../main';
+import prefix from '../prefix';
 
 export interface DialogProps {
   className?: string;

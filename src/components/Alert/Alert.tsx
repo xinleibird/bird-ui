@@ -1,6 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, useMemo, useState } from 'react';
-import { Icon, prefix, Transition } from '../';
+import { Icon, Transition } from '../main';
+import prefix from '../prefix';
 
 export interface AlertProps {
   className?: string;

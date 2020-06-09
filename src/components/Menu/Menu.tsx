@@ -2,7 +2,9 @@ import cxs from 'classnames';
 import React, { CSSProperties, FunctionComponent, ReactNode } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { createStore } from 'redux';
-import { Dropdown, libs, prefix } from '../';
+import { renderChildren } from '../libs';
+import { Dropdown } from '../main';
+import prefix from '../prefix';
 import { closeAllSubMenu, setItemActiveIndex, toggleSubMenuShowIndex } from './store/actions';
 import reducers from './store/reducers';
 
@@ -46,7 +48,7 @@ const Menu: FunctionComponent<MenuProps> = ({
     sticky,
   });
 
-  const rendered = libs.renderChildren(children, ['MenuItem', 'SubMenu']);
+  const rendered = renderChildren(children, ['MenuItem', 'SubMenu']);
 
   if (direction === 'horizontal') {
     return (

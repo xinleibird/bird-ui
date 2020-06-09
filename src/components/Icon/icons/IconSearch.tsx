@@ -6,4 +6,8 @@ const IconSearch: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconSearch.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconSearch;

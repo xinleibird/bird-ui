@@ -13,6 +13,8 @@ import IconSuccess from './icons/IconSuccess';
 import IconTable from './icons/IconTable';
 import IconWarning from './icons/IconWarning';
 
+export type { IconProps };
+
 type IconComponent = FunctionComponent<IconProps> & {
   AngleDown: FunctionComponent<IconProps>;
   AngleRight: FunctionComponent<IconProps>;

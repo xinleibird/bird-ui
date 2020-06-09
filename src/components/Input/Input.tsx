@@ -1,7 +1,14 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, InputHTMLAttributes, ReactElement, useMemo } from 'react';
-import { prefix } from '../';
-import Icon from '../Icon/Icon';
+import React, {
+  FunctionComponent,
+  FunctionComponentElement,
+  InputHTMLAttributes,
+  ReactElement,
+  useMemo,
+} from 'react';
+import { renderChildren } from '../libs';
+import prefix from '../prefix';
+import { IconProps } from '../props';
 
 interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
   inputSize?: 'large' | 'small';
@@ -10,7 +17,8 @@ interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
   prepand?: string | ReactElement;
   append?: string | ReactElement;
 }
-type InputProps = Partial<InputHTMLAttributes<HTMLElement>> & BaseInputProps;
+
+export type InputProps = Partial<InputHTMLAttributes<HTMLElement>> & BaseInputProps;
 
 const Input: FunctionComponent<InputProps> = ({
   className,
@@ -42,6 +50,11 @@ const Input: FunctionComponent<InputProps> = ({
     'append-sm': inputSize === 'small',
   });
 
+  const Icon = icon as FunctionComponentElement<IconProps>;
+  const iconAttr = inputSize ? { size: inputSize } : {};
+
+  const renderedIcon = icon && renderChildren(Icon, ['Icon'], iconAttr);
+
   return useMemo(() => {
     return (
       <span className={groupClasses}>
@@ -55,7 +68,7 @@ const Input: FunctionComponent<InputProps> = ({
             }}
             {...restArgs}
           />
-          {icon && <Icon size={inputSize} />}
+          {renderedIcon}
         </span>
         {append && <button className={appendClasses}>{append}</button>}
       </span>
@@ -68,7 +81,7 @@ const Input: FunctionComponent<InputProps> = ({
     inputClasses,
     size,
     restArgs,
-    icon,
+    renderedIcon,
     append,
     appendClasses,
   ]);

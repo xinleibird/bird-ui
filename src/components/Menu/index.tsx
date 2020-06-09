@@ -3,7 +3,9 @@ import Menu, { MenuProps } from './Menu';
 import MenuItem, { MenuItemProps } from './MenuItem';
 import SubMenu, { SubMenuProps } from './SubMenu';
 
-export type MenuComponent = FunctionComponent<MenuProps> & {
+export type { MenuProps, MenuItemProps, SubMenuProps };
+
+type MenuComponent = FunctionComponent<MenuProps> & {
   MenuItem: FunctionComponent<MenuItemProps>;
   SubMenu: FunctionComponent<SubMenuProps>;
 };

@@ -6,4 +6,8 @@ const IconClose: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconClose.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconClose;

@@ -6,7 +6,7 @@ import React, {
   useMemo,
   ReactNode,
 } from 'react';
-import { prefix } from '../';
+import prefix from '../prefix';
 
 interface BaseUlProps {
   readonly rendersign?: string;

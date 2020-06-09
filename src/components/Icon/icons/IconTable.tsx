@@ -6,4 +6,8 @@ const IconTable: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconTable.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconTable;

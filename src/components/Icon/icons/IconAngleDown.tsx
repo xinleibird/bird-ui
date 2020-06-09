@@ -6,4 +6,8 @@ const IconAngleDown: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconAngleDown.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconAngleDown;

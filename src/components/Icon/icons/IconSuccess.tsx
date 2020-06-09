@@ -6,4 +6,8 @@ const IconSuccess: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconSuccess.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconSuccess;

@@ -6,4 +6,8 @@ const IconSetting: FunctionComponent<IconProps> = ({ ...restProps }) => {
   return <Icon src={svg} {...restProps} />;
 };
 
+IconSetting.defaultProps = {
+  rendersign: 'Icon',
+};
+
 export default IconSetting;

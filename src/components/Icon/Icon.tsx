@@ -1,7 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent } from 'react';
 import Svg, { IProps as SVGProps } from 'react-inlinesvg';
-import { prefix } from '../';
+import prefix from '../prefix';
 
 export interface BaseIconProps {
   className?: string;
@@ -9,6 +9,7 @@ export interface BaseIconProps {
   size?: 'large' | 'small';
   animate?: 'spin' | 'beat';
   color?: string;
+  readonly rendersign?: 'Icon';
 }
 
 export type IconProps = Partial<SVGProps & BaseIconProps>;
@@ -28,6 +29,10 @@ const Icon: FunctionComponent<IconProps> = ({
   });
 
   return <Svg src={src} className={classes} style={{ fill: color }} {...restArgs} />;
+};
+
+Icon.defaultProps = {
+  rendersign: 'Icon',
 };
 
 export default Icon;
