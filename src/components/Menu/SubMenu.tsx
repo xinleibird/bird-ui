@@ -1,8 +1,9 @@
 import cxs from 'classnames';
 import React, { FunctionComponent, ReactElement, ReactNode, useMemo } from 'react';
 import { DefaultRootState, useDispatch, useSelector } from 'react-redux';
-import { Icon, Transition } from '../main';
-import { renderChildren } from '../libs';
+import { renderChildren } from '../../libs';
+import Icon from '../Icon';
+import Transition from '../Transition';
 import { toggleSubMenuShowIndex } from './store/actions';
 
 export interface SubMenuProps {

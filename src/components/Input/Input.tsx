@@ -6,9 +6,9 @@ import React, {
   ReactElement,
   useMemo,
 } from 'react';
-import { renderChildren } from '../libs';
-import prefix from '../prefix';
-import { IconProps } from '../props';
+import { renderChildren } from '../../libs';
+import { IconProps } from '../Icon';
+import { prefix } from '../prefix';
 
 interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
   inputSize?: 'large' | 'small';

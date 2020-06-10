@@ -3,10 +3,10 @@ import React, {
   FunctionComponent,
   HTMLAttributes,
   LiHTMLAttributes,
-  useMemo,
   ReactNode,
+  useMemo,
 } from 'react';
-import prefix from '../prefix';
+import { prefix } from '../prefix';
 
 interface BaseUlProps {
   readonly rendersign?: string;

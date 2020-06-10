@@ -1,3 +1,1 @@
-const prefix = 'bird-ui';
-
-export default prefix;
+export const prefix = 'bird-ui';

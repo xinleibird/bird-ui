@@ -7,6 +7,7 @@ interface BaseTransitionProps {
 }
 
 export type TransitionProps = Partial<CSSTransitionProps & BaseTransitionProps>;
+
 const Transition: FunctionComponent<TransitionProps> = ({
   animationClassName = 'zoom-in-top',
   children,

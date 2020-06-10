@@ -1,7 +1,7 @@
 import cxs from 'classnames';
 import React, { FunctionComponent } from 'react';
 import Svg, { IProps as SVGProps } from 'react-inlinesvg';
-import prefix from '../prefix';
+import { prefix } from '../prefix';
 
 export interface BaseIconProps {
   className?: string;

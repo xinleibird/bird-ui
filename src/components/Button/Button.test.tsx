@@ -1,9 +1,8 @@
-import React from 'react';
-import { render, fireEvent, screen } from '@testing-library/react';
-
 import '@testing-library/jest-dom';
+import { fireEvent, render, screen } from '@testing-library/react';
+import React from 'react';
+import Button from '../Button';
 
-import { Button } from '../main';
 const { Link } = Button;
 
 describe('test Button component', () => {

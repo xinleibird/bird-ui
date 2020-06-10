@@ -1,6 +1,7 @@
 import React, { FunctionComponent, SelectHTMLAttributes } from 'react';
-import { Input, List } from '../main';
-import { renderChildren } from '../libs';
+import Input from '../Input';
+import List from '../List';
+import { renderChildren } from '../../libs';
 // import { Input, List } from '../';
 
 interface BaseSelectProps {

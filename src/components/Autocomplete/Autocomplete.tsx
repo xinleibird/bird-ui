@@ -2,11 +2,13 @@ import cxs from 'classnames';
 import React, { FunctionComponent, useEffect, useRef, useState } from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
-import { Dropdown, Input, List, Transition } from '../main';
-import prefix from '../prefix';
+import Dropdown from '../Dropdown';
+import Input from '../Input';
+import List, { ListItemType } from '../List';
+import { prefix } from '../prefix';
+import Transition from '../Transition';
 import { initSuggestions, updateSuggestions } from './store/actions';
 import reducers, { SuggestionsType } from './store/reducers';
-import { ListItemType } from '../List/List';
 
 export interface AutocompleteProps {
   className?: string;

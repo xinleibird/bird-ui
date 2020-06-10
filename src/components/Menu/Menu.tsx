@@ -2,9 +2,9 @@ import cxs from 'classnames';
 import React, { CSSProperties, FunctionComponent, ReactNode } from 'react';
 import { Provider, useDispatch } from 'react-redux';
 import { createStore } from 'redux';
-import { renderChildren } from '../libs';
-import { Dropdown } from '../main';
-import prefix from '../prefix';
+import { renderChildren } from '../../libs';
+import Dropdown from '../Dropdown';
+import { prefix } from '../prefix';
 import { closeAllSubMenu, setItemActiveIndex, toggleSubMenuShowIndex } from './store/actions';
 import reducers from './store/reducers';
 
