@@ -6,7 +6,7 @@ import React, {
   ReactElement,
   useMemo,
 } from 'react';
-import { renderChildren } from '../../libs';
+import { renderElement } from '../../libs';
 import { IconProps } from '../Icon';
 import { prefix } from '../prefix';
 
@@ -53,7 +53,7 @@ const Input: FunctionComponent<InputProps> = ({
   const Icon = icon as FunctionComponentElement<IconProps>;
   const iconAttr = inputSize ? { size: inputSize } : {};
 
-  const renderedIcon = icon && renderChildren(Icon, ['Icon'], iconAttr);
+  const renderedIcon = icon && renderElement(Icon, ['Icon'], iconAttr);
 
   return useMemo(() => {
     return (

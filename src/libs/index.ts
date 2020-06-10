@@ -18,10 +18,9 @@ export const debounce = (fn: Function, timeout: number, context?: ThisType<any>)
 export const renderChildren = (
   children: ReactNode,
   rendersigns: string[],
-  unionProps?: Object,
-  preIndex?: string
+  preIndex?: string,
+  unionProps?: Object
 ) => {
-  console.log(children);
   return React.Children.map(children, (child, index) => {
     const itemElement = child as ReactElement;
 
@@ -44,4 +43,19 @@ export const renderChildren = (
       `Component just accept ${rendersigns} component, but got a <${itemElement.type}> element, this could not be rendered.`
     );
   });
+};
+
+export const renderElement = (
+  element: ReactElement,
+  rendersigns: string[],
+  unionProps?: Object
+) => {
+  for (const sign of rendersigns) {
+    if (element.props.rendersign === sign) {
+      return React.cloneElement(element, Object.assign({}, unionProps));
+    }
+  }
+  console.warn(
+    `Component just accept ${rendersigns} component, but got a <${element.type}> element, this could not be rendered.`
+  );
 };
