@@ -29,12 +29,15 @@ Ul.defaultProps = {
 };
 
 interface BaseLiProps {
+  marked?: boolean;
   readonly rendersign?: string;
 }
 
 export type LiProps = Partial<LiHTMLAttributes<HTMLElement> & BaseLiProps>;
-export const Li: FunctionComponent<LiProps> = ({ className, children, ...args }) => {
-  const classes = cxs(`${prefix}-li`, className);
+export const Li: FunctionComponent<LiProps> = ({ className, marked, children, ...args }) => {
+  const classes = cxs(`${prefix}-li`, className, {
+    marked,
+  });
   return useMemo(() => {
     return (
       <li className={classes} {...args}>
@@ -51,6 +54,7 @@ Li.defaultProps = {
 export interface ListItemType {
   key: string;
   node: ReactNode;
+  marked?: boolean;
 }
 
 export interface ListProps {
@@ -76,6 +80,7 @@ const List: FunctionComponent<ListProps> = ({
               clickMethod(item);
             }}
             key={item.key}
+            marked={item.marked ? true : false}
           >
             {item.node}
           </Li>

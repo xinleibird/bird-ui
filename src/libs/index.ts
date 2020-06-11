@@ -59,3 +59,31 @@ export const renderElement = (
     `Component just accept ${rendersigns} component, but got a <${element.type}> element, this could not be rendered.`
   );
 };
+
+export const getChildrenStructure = (children: ReactNode, rendersigns: string[]) => {
+  let isFirstMasked = true;
+  return React.Children.map(children, (child, index) => {
+    const itemElement = child as ReactElement;
+
+    for (const sign of rendersigns) {
+      if (
+        itemElement.props.rendersign === sign &&
+        typeof itemElement.props.children === 'string'
+      ) {
+        const marked = (itemElement.props.selected ? true : false) && isFirstMasked;
+
+        const item = {
+          key: `${index}`,
+          node: itemElement.props.children,
+          marked,
+        };
+
+        if (itemElement.props.selected) {
+          isFirstMasked = false;
+        }
+
+        return item;
+      }
+    }
+  });
+};

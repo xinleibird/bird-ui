@@ -15,6 +15,7 @@ export interface AutocompleteProps {
   data: string[];
   size?: number;
   onKeyPress?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  inputSize?: 'large' | 'small';
   name?: string;
   id?: string;
 }
@@ -23,6 +24,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   className,
   data = [],
   size = 40,
+  inputSize,
   onKeyPress,
   name,
   id,
@@ -71,7 +73,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
         <Input
           name={name}
           id={id}
-          inputSize="small"
+          inputSize={inputSize}
           value={keyword}
           onKeyPress={onKeyPress}
           size={size}
@@ -93,7 +95,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
             dispatch(updateSuggestions(target.value));
           }}
         />
-        <Transition in={!inputEmpty}>
+        <Transition in={!inputEmpty} animationClassName="fade-in">
           <List data={filtered} clickMethod={liClickMethod} />
         </Transition>
       </div>

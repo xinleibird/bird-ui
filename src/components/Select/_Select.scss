@@ -1,0 +1,28 @@
+.#{$prefix}-select {
+  display: inline-flex;
+  flex-direction: column;
+  position: relative;
+
+  .#{$prefix}-li {
+    line-height: $select-line-height;
+  }
+
+  .marked {
+    border-right: darken($primary, 20%) 3px solid;
+  }
+
+  .select-ul {
+    position: absolute;
+    top: 2rem;
+    z-index: 999;
+  }
+
+  .#{$prefix}-li {
+    &:hover,
+    &:focus,
+    &:active {
+      background: $primary;
+      color: $gray-10;
+    }
+  }
+}
