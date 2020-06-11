@@ -1,5 +1,11 @@
 import cxs from 'classnames';
-import React, { FunctionComponent, SelectHTMLAttributes, useEffect, useState } from 'react';
+import React, {
+  FunctionComponent,
+  SelectHTMLAttributes,
+  useEffect,
+  useState,
+  ReactElement,
+} from 'react';
 import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redux';
 import { createStore } from 'redux';
 import { getChildrenStructure } from '../../libs';
@@ -14,11 +20,12 @@ import reducers from './store/reducers';
 interface BaseSelectProps {
   className?: string;
   size?: number;
+  icon?: ReactElement;
 }
 
 export type SelectProps = Partial<SelectHTMLAttributes<HTMLSelectElement> & BaseSelectProps>;
 
-const Select: FunctionComponent<SelectProps> = ({ className, size, children }) => {
+const Select: FunctionComponent<SelectProps> = ({ className, icon, size, children }) => {
   const [showList, setShow] = useState(false);
 
   const selected = useSelector(
@@ -71,6 +78,7 @@ const Select: FunctionComponent<SelectProps> = ({ className, size, children }) =
         <Input
           value={selected.value}
           onChange={(e) => {}}
+          icon={icon}
           size={size}
           onFocus={() => {
             setShow(true);
