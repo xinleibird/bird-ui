@@ -12,6 +12,6 @@ export default defineConfig({
   base: '/bird-ui',
   publicPath: '/bird-ui/',
   exportStatic: {}, // 将所有路由输出为 HTML 目录结构，以免刷新页面时 404
-  // dynamicImport: {},
+  dynamicImport: {},
   // more config: https://d.umijs.org/config
 });
