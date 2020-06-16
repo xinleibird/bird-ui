@@ -3278,10 +3278,10 @@
     "@webassemblyjs/wast-parser" "1.9.0"
     "@xtuc/long" "4.2.2"
 
-"@xinleibird/bird-ui@^0.3.1":
-  version "0.3.1"
-  resolved "https://registry.yarnpkg.com/@xinleibird/bird-ui/-/bird-ui-0.3.1.tgz#846f430d82bbae70b6a584e9df2ebe9ef3997f21"
-  integrity sha512-cy9E3Ve3vqAvr56ANujehLfCS4EdmsCPZYun+tMMwopMFrFAVzExbXREXLo4yF9njOlU50aYnwRpx5R+q2rgdg==
+"@xinleibird/bird-ui@^0.3.2":
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/@xinleibird/bird-ui/-/bird-ui-0.3.2.tgz#5052735e31226a026aeafbe9a868ce00ba17816e"
+  integrity sha512-3XSmVT1AAA8EncspoITwYESwrH7lFMkrVXLyPOX+PpT5ZhRDkfH8K2FiShDUsViuTix9WvUTdGPYUZEushWlyA==
   dependencies:
     classnames "^2.2.6"
     react-inlinesvg "^1.2.0"
