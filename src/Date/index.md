@@ -15,7 +15,7 @@ export default () => {
     <>
       <Date />
       <span style={{ padding: '0 5px' }} />
-      <Date size={35} />
+      <Date size={28} />
       <br />
       <br />
       <br />
