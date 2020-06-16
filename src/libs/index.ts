@@ -89,8 +89,10 @@ export const getChildrenStructure = (children: ReactNode, rendersigns: string[])
 };
 
 export const testDatePattern = (str: string) => {
-  const reg = /^\s*\d{0,4}\s*\/?$|^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*\/?$|^\s*\d{1,4}\s*\/\s*([2-9]|1[0-2]?)\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
-  if (reg.test(str)) {
+  const regYear = /^\s*\d{0,4}\s*\/?$/;
+  const regYearMonth = /^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*\/?$/;
+  const regYearMonthDay = /^\s*\d{1,4}\s*\/\s*([2-9]|1[0-2]?)\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
+  if (regYear.test(str) || regYearMonth.test(str) || regYearMonthDay.test(str)) {
     const inputNumbers = str
       .replace(/\s/g, '')
       .split('/')
@@ -117,8 +119,10 @@ export const testDateChar = (str: string) => {
 };
 
 export const formatDateString = (str: string) => {
-  const reg = /^\s*\d{0,4}\s*\/?$|^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*(?<=\d)\/?$|^\s*\d{1,4}\s*\/\s*\d{1,2}\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
-  if (reg.test(str)) {
+  const regYear = /^\s*\d{0,4}\s*\/?$/;
+  const regYearMonth = /^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*\/?$/;
+  const regYearMonthDay = /^\s*\d{1,4}\s*\/\s*([2-9]|1[0-2]?)\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
+  if (regYear.test(str) || regYearMonth.test(str) || regYearMonthDay.test(str)) {
     return str.replace(/\s/g, '').replace(/\/0/g, '/');
   }
   return str;
