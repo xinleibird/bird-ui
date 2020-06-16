@@ -18,7 +18,15 @@
 .#{$prefix}-input {
   transition: $input-transition;
   border: $gray-20 1px solid;
-  padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
+  padding: $input-padding-y $input-padding-x;
+
+  &.invalid {
+    color: $danger;
+  }
+
+  &.has-icon {
+    padding: $input-padding-y 4 * $input-padding-x $input-padding-y $input-padding-x;
+  }
 
   border-radius: 0;
 
@@ -41,17 +49,25 @@
   }
 
   &.input-lg {
-    padding: $input-padding-y-lg 4 * $input-padding-x-lg $input-padding-y-lg
-      $input-padding-x-lg;
+    padding: $input-padding-y-lg $input-padding-x-lg;
     font-size: $btn-font-size-lg;
     vertical-align: 0.25px;
+
+    &.has-icon {
+      padding: $input-padding-y-lg 4 * $input-padding-x-lg $input-padding-y-lg
+        $input-padding-y-lg;
+    }
   }
 
   &.input-sm {
-    padding: $input-padding-y-sm 4 * $input-padding-x-sm $input-padding-y-sm
-      $input-padding-x-sm;
+    padding: $input-padding-y-sm $input-padding-x-sm;
     font-size: $btn-font-size-sm;
     vertical-align: 0.1px;
+
+    &.has-icon {
+      padding: $input-padding-y-sm 6 * $input-padding-x-sm $input-padding-y-sm
+        $input-padding-y-sm;
+    }
   }
 }
 
@@ -105,6 +121,20 @@
 .icon-anchor {
   position: relative;
 
+  .#{$prefix}-icon-btn {
+    position: absolute;
+    right: 0.55rem;
+    top: 0.05rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      > svg {
+        fill: $primary;
+      }
+    }
+  }
+
   > svg {
     position: absolute;
     right: 0.55rem;
@@ -116,6 +146,20 @@
 
 .icon-anchor-small {
   position: relative;
+
+  .#{$prefix}-icon-btn {
+    position: absolute;
+    right: 0.5rem;
+    top: 0.2rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      > svg {
+        fill: $primary;
+      }
+    }
+  }
 
   > svg {
     position: absolute;
@@ -129,11 +173,43 @@
 .icon-anchor-large {
   position: relative;
 
+  .#{$prefix}-icon-btn {
+    position: absolute;
+    right: 0.7rem;
+    top: -0.15rem;
+
+    &:hover,
+    &:focus,
+    &:active {
+      > svg {
+        fill: $primary;
+      }
+    }
+  }
+
   > svg {
     position: absolute;
     right: 0.7rem;
     top: -0.15rem;
     fill: $gray-30;
     pointer-events: none;
+  }
+}
+
+.#{$prefix}-input-reset {
+  position: absolute;
+  top: 0;
+  right: 2rem;
+
+  &:hover,
+  &:focus,
+  &:active {
+    > svg {
+      fill: lighten($primary, 20%);
+    }
+  }
+
+  & > svg {
+    fill: $gray-20;
   }
 }

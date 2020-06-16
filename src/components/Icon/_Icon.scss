@@ -13,6 +13,11 @@
     height: $icon-size-sm;
   }
 
+  &.icon-tn {
+    width: $icon-size-tn;
+    height: $icon-size-tn;
+  }
+
   &.animate-spin {
     animation: spin 2000ms infinite linear;
   }

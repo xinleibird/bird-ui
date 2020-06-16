@@ -12,7 +12,7 @@ import Transition from '../Transition';
 
 type SetLoadingStateCallback = (loadingState: boolean) => void;
 interface BaseButtonProps {
-  size?: 'large' | 'small';
+  size?: 'large' | 'small' | 'tinny';
   btnType?: 'primary' | 'secondary' | 'danger';
   children?: ReactNode;
   disabled?: boolean;
@@ -40,6 +40,7 @@ const Button: FunctionComponent<ButtonProps> = ({
   const classes = cxs(`${prefix}-btn`, className, {
     'btn-lg': size === 'large',
     'btn-sm': size === 'small',
+    'btn-tn': size === 'tinny',
     [`btn-${btnType}`]: btnType,
     loading: isLoading,
   });

@@ -10,3 +10,4 @@ export { default as Menu } from './components/Menu';
 export { default as Transition } from './components/Transition';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Select } from './components/Select';
+export { default as Date } from './components/Date';

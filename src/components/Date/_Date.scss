@@ -1,0 +1,98 @@
+.#{$prefix}-date-group {
+  display: inline-flex;
+  flex-direction: column;
+
+  position: relative;
+
+  .#{$prefix}-date {
+    &.valid {
+      .#{prefix}-input {
+        color: $danger;
+      }
+    }
+  }
+
+  .#{$prefix}-date-picker-wrapper {
+    position: absolute;
+    top: 2.65rem;
+    background: $white;
+    z-index: 999;
+
+    $border-width: 1px;
+
+    width: 100%;
+
+    border: 1px solid $gray-20;
+    box-shadow: $box-shadow;
+
+    .#{$prefix}-date-picker {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+
+      .#{$prefix}-date-item {
+        text-align: center;
+        color: $date-item-color;
+        font-size: $date-item-font-size;
+        line-height: $date-item-line-height;
+
+        &.active {
+          background: darken($primary, 20%);
+          color: $white;
+        }
+
+        &:hover,
+        &:focus,
+        &:active {
+          background: $primary;
+          color: $gray-10;
+        }
+      }
+    }
+
+    .#{$prefix}-date-picker-title {
+      font-size: $font-size-lg;
+      font-weight: $font-weight-bold;
+      background: darken($primary, 20%);
+      color: $white;
+      text-align: center;
+      padding: 0.5rem 0.3rem;
+      border-bottom: 2px solid $gray-30;
+
+      .#{$prefix}-date-picker-title-year,
+      .#{$prefix}-date-picker-title-month {
+        display: grid;
+        grid-template-columns: 25px 1fr 25px;
+        grid-template-rows: 1fr;
+
+        .btn-tn {
+          margin-top: 0.25rem;
+        }
+      }
+    }
+
+    .#{$prefix}-date-picker-header {
+      background: darken($primary, 20%);
+      color: $white;
+      text-align: center;
+      font-size: $font-size-sm;
+      font-weight: $font-weight-bold;
+      line-height: $line-height-lg;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .#{$prefix}-date-picker-footer {
+      background: darken($primary, 20%);
+      color: $white;
+      text-align: right;
+      font-size: $font-size-sm;
+      line-height: $line-height-lg;
+      padding-right: 1rem;
+    }
+  }
+}

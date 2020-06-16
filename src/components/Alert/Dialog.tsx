@@ -6,12 +6,18 @@ import Button from '../Button';
 
 export interface DialogProps {
   className?: string;
+  title?: string;
+  confirm?: string;
+  cancel?: string;
   onConfirm?: () => void;
   onCancel?: () => void;
 }
 
 const Dialog: FunctionComponent<DialogProps> = ({
   className,
+  title,
+  confirm = 'CONFIRM',
+  cancel = 'CANCEL',
   children,
   onConfirm = () => {},
   onCancel = () => {},
@@ -33,6 +39,9 @@ const Dialog: FunctionComponent<DialogProps> = ({
         <div className={classes}>
           <div className="dialog-background"></div>
           <div className="dialog-container">
+            <div className="dialog-title">
+              <h2>{title}</h2>
+            </div>
             <div className="dialog-content">{children}</div>
             <div className="dialog-button">
               <Button.Link
@@ -41,7 +50,7 @@ const Dialog: FunctionComponent<DialogProps> = ({
                   onCancel();
                 }}
               >
-                CANCEL
+                {cancel}
               </Button.Link>
               <Button.Link
                 onClick={(e) => {
@@ -49,14 +58,14 @@ const Dialog: FunctionComponent<DialogProps> = ({
                   onConfirm();
                 }}
               >
-                CONFIRM
+                {confirm}
               </Button.Link>
             </div>
           </div>
         </div>
       </Transition>
     );
-  }, [children, classes, couldShow, onCancel, onConfirm]);
+  }, [cancel, children, classes, confirm, couldShow, onCancel, onConfirm, title]);
 };
 
 export default Dialog;

@@ -1,6 +1,7 @@
 import React, { FunctionComponent } from 'react';
+import Date from './components/Date/Date';
 import Select, { Option } from './components/Select/Select';
-import { Autocomplete, Icon } from './main';
+import { Icon } from './main';
 
 const ShowComponents: FunctionComponent = () => {
   return (
@@ -12,10 +13,7 @@ const ShowComponents: FunctionComponent = () => {
         <Option>hello4</Option>
         <Option>hello5</Option>
       </Select>
-      <br />
-      hello
-      <br />
-      <Autocomplete data={['a', 'b']} />
+      <Date />
     </>
   );
 };

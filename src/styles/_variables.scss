@@ -55,6 +55,7 @@ $font-family-base: $font-family-sans-serif !default;
 $font-size-base: 1rem !default;
 $font-size-sm: $font-size-base * 0.875 !default;
 $font-size-lg: $font-size-base * 1.25 !default;
+$font-size-tn: $font-size-base * 0.75 !default;
 
 // font weight
 $font-weight-lighter: lighter !default;
@@ -156,6 +157,7 @@ $btn-margin-x-lg: 0.75rem !default;
 $btn-font-size: $font-size-base !default;
 $btn-font-size-sm: $font-size-sm !default;
 $btn-font-size-lg: $font-size-lg !default;
+$btn-font-size-tn: $font-size-tn !default;
 
 $btn-border-width: $border-width !default;
 
@@ -191,6 +193,7 @@ $link-margin-x-lg: 0.35rem !default;
 $icon-size: $font-size-base !default;
 $icon-size-sm: $font-size-sm !default;
 $icon-size-lg: $font-size-lg !default;
+$icon-size-tn: $font-size-tn !default;
 
 // menu
 $menu-font-family: $font-family-base !default;
@@ -283,4 +286,10 @@ $list-border-radius: 0.4 * $border-radius !default;
 $list-transition: $base-transition !default;
 $list-box-shadow: $box-shadow !default;
 
+// select
 $select-line-height: 2.25 !default;
+
+// date
+$date-item-color: $secondary !default;
+$date-item-font-size: $font-size-sm !default;
+$date-item-line-height: $line-height-lg !default;

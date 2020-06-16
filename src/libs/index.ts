@@ -87,3 +87,44 @@ export const getChildrenStructure = (children: ReactNode, rendersigns: string[])
     }
   });
 };
+
+export const testDatePattern = (str: string) => {
+  const reg = /^\s*\d{0,4}\s*\/?$|^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*\/?$|^\s*\d{1,4}\s*\/\s*([2-9]|1[0-2]?)\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
+  if (reg.test(str)) {
+    const inputNumbers = str
+      .replace(/\s/g, '')
+      .split('/')
+      .map((item) => {
+        return parseInt(item);
+      });
+
+    const [year, month, day] = inputNumbers;
+    const currentMonthDate = new Date(year, month, 0).getDate();
+
+    if (day > currentMonthDate) {
+      return false;
+    }
+
+    return true;
+  }
+
+  return false;
+};
+
+export const testDateChar = (str: string) => {
+  const reg = /^[\d\s/]*$/;
+  return reg.test(str);
+};
+
+export const formatDateString = (str: string) => {
+  const reg = /^\s*\d{0,4}\s*\/?$|^\s*\d{1,4}\s*\/\s*0?([2-9]|1[0-2]?)\s*(?<=\d)\/?$|^\s*\d{1,4}\s*\/\s*\d{1,2}\s*\/\s*0?([1-9]|[12]\d|3[01])\s*$/;
+  if (reg.test(str)) {
+    return str.replace(/\s/g, '').replace(/\/0/g, '/');
+  }
+  return str;
+};
+
+export const getCurrentDateString = () => {
+  const date = new Date();
+  return `${date.getFullYear()}/${date.getMonth() + 1}/${date.getDate()}`;
+};

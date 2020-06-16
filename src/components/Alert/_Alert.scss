@@ -94,15 +94,24 @@
     top: 28%;
     left: calc(50vw - 16rem);
 
-    padding: $dialog-padding-y $dialog-padding-x;
+    .dialog-title {
+      background: darken($primary, 20%);
+      text-align: center;
+
+      h2 {
+        color: $white;
+        margin: 0;
+        padding: 1rem 2rem;
+      }
+    }
 
     .dialog-content {
+      padding: 1rem 2rem;
       color: $gray-70;
       font-family: $font-family-sans-serif;
     }
 
     .dialog-button {
-      padding-top: 1.2rem;
       text-align: right;
 
       .link {

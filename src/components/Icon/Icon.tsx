@@ -6,7 +6,7 @@ import { prefix } from '../prefix';
 export interface BaseIconProps {
   className?: string;
   src: string;
-  size?: 'large' | 'small';
+  size?: 'large' | 'small' | 'tinny';
   animate?: 'spin' | 'beat';
   color?: string;
   readonly rendersign?: 'Icon';
@@ -25,6 +25,7 @@ const Icon: FunctionComponent<IconProps> = ({
   const classes = cxs(`${prefix}-icon`, className, {
     'icon-lg': size === 'large',
     'icon-sm': size === 'small',
+    'icon-tn': size === 'tinny',
     [`animate-${animate}`]: animate,
   });
 
