@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://xinleibird.github.io/bird-ui">
-    <img width="200" src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo512.png">
+    <img width="256" src="https://raw.githubusercontent.com/xinleibird/bird-ui/master/public/logo512.png">
   </a>
 </p>
 <p align="center">
