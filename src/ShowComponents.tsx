@@ -14,6 +14,7 @@ const ShowComponents: FunctionComponent = () => {
         <Option>hello5</Option>
       </Select>
       <Date />
+      <Date />
     </>
   );
 };

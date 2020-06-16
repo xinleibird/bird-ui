@@ -48,6 +48,7 @@ const LDate: FunctionComponent<DateProps> = ({ className, size }) => {
   const classes = cxs(`${prefix}-date-group`, className);
   return (
     <Dropdown
+      style={{ display: 'inline' }}
       onClickOutside={() => {
         setPickerVisiable(false);
       }}
