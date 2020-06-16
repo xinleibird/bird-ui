@@ -29,7 +29,9 @@ const DateItem: FunctionComponent<DateItemProps> = ({ className, children }) => 
       <span
         className={classes}
         onClick={() => {
-          dispatch(updateDate(`${year}/${month + 1}/${children ? children : ''}`));
+          if (children) {
+            dispatch(updateDate(`${year}/${month + 1}/${children}`));
+          }
         }}
       >
         {children}
@@ -141,9 +143,11 @@ const DatePicker: FunctionComponent<DatePickerProps> = () => {
           <span>日</span>
         </div>
         {currentPicker()}
-        <div className={`${prefix}-date-picker-footer`}>{`${year} 年 ${
-          month + 1
-        } 月 ${day} 日`}</div>
+        <div className={`${prefix}-date-picker-footer`}>
+          {`${year} 年
+            ${(month + 1).toString().padStart(2, '0')} 月
+            ${day.toString().padStart(2, '0')} 日`}
+        </div>
       </div>
     </div>
   );

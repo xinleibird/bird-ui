@@ -5,10 +5,10 @@
 </p>
 <p align="center">
   <a href="https://github.com/xinleibird/bird-ui/blob/master/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg">
+    <img src="https://img.shields.io/npm/l/@xinleibird/bird-ui">
   </a>
   <a href="https://www.npmjs.com/package/@xinleibird/bird-ui" style="margin-left: 4px;" >
-    <img src="https://img.shields.io/npm/v/@xinleibird/bird-ui?color=%230B7CBD" >
+    <img src="https://img.shields.io/npm/l/@xinleibird/bird-ui">
   </a>
   <a href="https://travis-ci.com/github/xinleibird/bird-ui" style="margin-left: 4px;">
     <img src="https://travis-ci.com/xinleibird/bird-ui.svg?branch=master">
