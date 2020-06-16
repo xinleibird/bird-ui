@@ -114,7 +114,7 @@ const LDate: FunctionComponent<DateProps> = ({ className, size }) => {
             dispatch(updateDate(getCurrentDateString()));
           }}
         />
-        <Transition in={pickerIsVisiable} animationClassName="fade-in">
+        <Transition in={pickerIsVisiable}>
           <DatePicker />
         </Transition>
       </div>
