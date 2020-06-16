@@ -14,10 +14,19 @@ export default () => {
   return (
     <>
       <Date />
-      <br />
-      <br />
-      <br />
+      <span style={{ padding: '0 5px' }} />
       <Date size={35} />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
     </>
   );
 };
