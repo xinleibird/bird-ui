@@ -1,7 +1,5 @@
 import { FunctionComponent } from 'react';
-import List, { Li, LiProps, ListProps, Ul, UlProps, ListItemType } from './List';
-
-export type { LiProps, ListProps, UlProps, ListItemType };
+import List, { Li, LiProps, ListProps, Ul, UlProps } from './List';
 
 type ListComponent = FunctionComponent<ListProps> & {
   Ul: FunctionComponent<UlProps>;

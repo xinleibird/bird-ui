@@ -17,8 +17,6 @@ import IconTable from './icons/IconTable';
 import IconWarning from './icons/IconWarning';
 import IconUndo from './icons/IconUndo';
 
-export type { IconProps };
-
 type IconComponent = FunctionComponent<IconProps> & {
   AngleUp: FunctionComponent<IconProps>;
   AngleRight: FunctionComponent<IconProps>;

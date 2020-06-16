@@ -1,13 +1,7 @@
 import cxs from 'classnames';
-import React, {
-  FunctionComponent,
-  FunctionComponentElement,
-  InputHTMLAttributes,
-  ReactElement,
-  useMemo,
-} from 'react';
+import React, { FunctionComponent, InputHTMLAttributes, ReactElement, useMemo } from 'react';
 import { renderElement } from '../../libs';
-import Icon, { IconProps } from '../Icon';
+import Icon from '../Icon';
 import { prefix } from '../prefix';
 
 interface BaseInputProps extends Partial<InputHTMLAttributes<HTMLElement>> {
@@ -56,8 +50,8 @@ const Input: FunctionComponent<InputProps> = ({
     'append-sm': inputSize === 'small',
   });
 
-  const IconOrigin = icon as FunctionComponentElement<IconProps>;
-  const IconBtn = iconBtn as FunctionComponentElement<IconProps>;
+  const IconOrigin = icon as ReactElement;
+  const IconBtn = iconBtn as ReactElement;
 
   const iconAttr = inputSize ? { size: inputSize } : {};
   const iconBtnAttr = inputSize ? { size: inputSize } : {};

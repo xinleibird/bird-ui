@@ -3,16 +3,14 @@ import React, { FunctionComponent } from 'react';
 import Svg, { IProps as SVGProps } from 'react-inlinesvg';
 import { prefix } from '../prefix';
 
-export interface BaseIconProps {
+export interface IconProps extends Partial<SVGProps> {
   className?: string;
-  src: string;
+  src?: string;
   size?: 'large' | 'small' | 'tinny';
   animate?: 'spin' | 'beat';
   color?: string;
   readonly rendersign?: 'Icon';
 }
-
-export type IconProps = Partial<SVGProps & BaseIconProps>;
 
 const Icon: FunctionComponent<IconProps> = ({
   className,

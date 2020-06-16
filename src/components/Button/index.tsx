@@ -2,8 +2,6 @@ import { FunctionComponent } from 'react';
 import Button, { ButtonProps } from './Button';
 import Link, { LinkProps } from './Link';
 
-export type { ButtonProps, LinkProps };
-
 type ButtonComponent = FunctionComponent<ButtonProps> & {
   Link: FunctionComponent<LinkProps>;
 };

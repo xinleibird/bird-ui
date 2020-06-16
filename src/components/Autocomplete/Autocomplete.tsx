@@ -4,7 +4,8 @@ import { DefaultRootState, Provider, useDispatch, useSelector } from 'react-redu
 import { createStore } from 'redux';
 import Dropdown from '../Dropdown';
 import Input from '../Input';
-import List, { ListItemType } from '../List';
+import List from '../List';
+import { ListItemType } from '../List/List';
 import { prefix } from '../prefix';
 import Transition from '../Transition';
 import { initSuggestions, updateSuggestions } from './store/actions';
