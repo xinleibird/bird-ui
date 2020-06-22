@@ -11,3 +11,4 @@ export { default as Transition } from './components/Transition';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Select } from './components/Select';
 export { default as Date } from './components/Date';
+export { default as Slider } from './components/Slider';

@@ -1,0 +1,56 @@
+.#{$prefix}-slider {
+  display: flex;
+  .#{$prefix}-slider-group {
+    width: 150px;
+    height: 4px;
+    top: 0.6rem;
+    position: relative;
+
+    .#{$prefix}-slider-rail {
+      position: absolute;
+      height: 5px;
+      background: lighten($primary, 10%);
+      pointer-events: none;
+      border-radius: 2px;
+    }
+    .#{$prefix}-slider-rail-click {
+      position: absolute;
+      height: 20px;
+      background: transparent;
+      top: -8px;
+    }
+
+    .#{$prefix}-slider-track {
+      position: absolute;
+      height: 5px;
+      background: darken($primary, 20%);
+      pointer-events: none;
+      border-radius: 2px;
+    }
+    .#{$prefix}-slider-thumb {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      top: -7px;
+      border-radius: 50%;
+      background: darken($primary, 20%);
+      transition: $slider-transition;
+
+      &:hover,
+      &:focus,
+      &:active {
+        box-shadow: $slider-box-shadow;
+        background: darken($primary, 20%);
+        pointer-events: visible;
+        cursor: default;
+      }
+    }
+  }
+
+  .#{$prefix}-slider-marks {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    color: $gray-60;
+    margin-top: 1rem;
+  }
+}

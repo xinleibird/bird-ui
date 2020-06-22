@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import Date from './components/Date/Date';
 import Select, { Option } from './components/Select/Select';
-import { Icon } from './main';
+import { Icon, Slider } from './main';
 
 const ShowComponents: FunctionComponent = () => {
   return (
@@ -15,6 +15,11 @@ const ShowComponents: FunctionComponent = () => {
       </Select>
       <Date />
       <Date size={40} />
+      <br />
+      <br />
+      <br />
+      <br />
+      <Slider defaultValue={10} range={100} />
     </>
   );
 };

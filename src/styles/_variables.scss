@@ -293,3 +293,8 @@ $select-line-height: 2.25 !default;
 $date-item-color: $secondary !default;
 $date-item-font-size: $font-size-sm !default;
 $date-item-line-height: $line-height-lg !default;
+
+// slider
+
+$slider-box-shadow: inset 0 0 4px $box-shadow-front-color, 0 0 0 0.2rem $box-shadow-end-color;
+$slider-transition: $base-transition !default;
