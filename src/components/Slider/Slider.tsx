@@ -8,6 +8,7 @@ interface SliderProps {
   width?: number;
   range?: number;
   name?: string;
+  id?: string;
 }
 
 const Slider: FunctionComponent<SliderProps> = ({
@@ -16,6 +17,7 @@ const Slider: FunctionComponent<SliderProps> = ({
   width = 160,
   range = 100,
   name = 'slider',
+  id,
 }) => {
   const classes = cxs(`${prefix}-slider`, className, {});
 
@@ -121,7 +123,7 @@ const Slider: FunctionComponent<SliderProps> = ({
             thumbClick.current = true;
           }}
         />
-        <input type="hidden" name={name} value={sliderValue.inputValue} />
+        <input type="hidden" name={name} id={id} value={sliderValue.inputValue} />
       </span>
       <div className={`${prefix}-slider-marks`}>{sliderValue.inputValue}</div>
     </div>
