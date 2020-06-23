@@ -35,17 +35,6 @@ export default () => (
         <Menu.MenuItem>Guilin</Menu.MenuItem>
       </Menu.SubMenu>
     </Menu.SubMenu>
-    <Menu.SubMenu title={<span>China</span>}>
-      <Menu.MenuItem>Beijing</Menu.MenuItem>
-      <Menu.MenuItem>Shanghai</Menu.MenuItem>
-      <Menu.MenuItem>Guangzhou</Menu.MenuItem>
-      <Menu.MenuItem>Shenzhen</Menu.MenuItem>
-      <Menu.SubMenu title={<span>Guangxi</span>}>
-        <Menu.MenuItem>Nanning</Menu.MenuItem>
-        <Menu.MenuItem>Liuzhou</Menu.MenuItem>
-        <Menu.MenuItem>Guilin</Menu.MenuItem>
-      </Menu.SubMenu>
-    </Menu.SubMenu>
   </Menu>
 );
 ```

@@ -1,5 +1,15 @@
 # Slider
 
+## ⚙ name | id
+
+- `[string]`
+
+`name | id` form input 元素的 name 和 id。
+
+<hr />
+<br />
+<br />
+
 ## ⚙ defaultValue
 
 - `[number]`
@@ -68,9 +78,3 @@ export default () => {
 <hr />
 <br />
 <br />
-
-## ⚙ name
-
-- `[string]`
-
-`name` 内部 input 的 name 属性，实际上是 form input 元素。其中有 name， value。

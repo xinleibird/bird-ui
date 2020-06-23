@@ -2,6 +2,16 @@
 
 ## 📦 Select
 
+### ⚙ name | id
+
+- `[string]`
+
+`name | id` form input 元素的 name 和 id。
+
+<hr />
+<br />
+<br />
+
 ### ⚙ size
 
 - `[number]`
