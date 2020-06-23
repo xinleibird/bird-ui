@@ -63,18 +63,18 @@ const Slider: FunctionComponent<SliderProps> = ({
     };
 
     const mouseUpHandler = () => {
-      return (e: MouseEvent) => {
+      return (e: MouseEvent | TouchEvent) => {
         thumbClick.current = false;
       };
     };
 
     document.addEventListener('mousemove', mouseMoveHandler());
     document.addEventListener('mouseup', mouseUpHandler());
-    document.addEventListener('dragend', mouseUpHandler());
+    document.addEventListener('touchend', mouseUpHandler());
     return () => {
       document.removeEventListener('mousemove', mouseMoveHandler);
       document.removeEventListener('mouseup', mouseMoveHandler);
-      document.removeEventListener('dragend', mouseMoveHandler);
+      document.removeEventListener('touchend', mouseMoveHandler);
     };
   }, [range, width]);
 
@@ -118,7 +118,7 @@ const Slider: FunctionComponent<SliderProps> = ({
             e.preventDefault();
             thumbClick.current = true;
           }}
-          onDragStart={(e) => {
+          onTouchStart={(e) => {
             e.preventDefault();
             thumbClick.current = true;
           }}
