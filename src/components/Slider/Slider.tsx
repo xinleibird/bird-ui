@@ -33,6 +33,7 @@ const Slider: FunctionComponent<SliderProps> = ({
       return (e: MouseEvent) => {
         if (thumbClick.current) {
           const origin = thumbRef.current.parentElement?.offsetLeft || 0;
+
           let calTrack = e.pageX - origin;
 
           if (calTrack > width) {
@@ -54,7 +55,7 @@ const Slider: FunctionComponent<SliderProps> = ({
 
           setSliderValue({
             trackWidth: `${calTrack}px`,
-            thumbOffset: `${calOffset - 8}px`,
+            thumbOffset: `${calOffset}px`,
             inputValue: `${calInput}`,
           });
         }
@@ -84,12 +85,10 @@ const Slider: FunctionComponent<SliderProps> = ({
           onClick={(e) => {
             const origin = e.currentTarget.parentElement?.offsetLeft || 0;
 
-            if (e.clientX - origin < width && e.clientX - origin > 0) {
+            if (e.clientX - origin < width && e.clientX - origin >= 0) {
               let calTrack = e.clientX - origin;
-
-              let calOffset = e.clientX - origin;
-
-              let calInput = Math.round(((e.clientX - origin) / width) * (range + 1));
+              let calOffset = calTrack;
+              let calInput = Math.round((calTrack / width) * (range + 1));
               if (calInput > range) {
                 calInput = range;
               }

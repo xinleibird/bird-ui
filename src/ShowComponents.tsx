@@ -19,6 +19,7 @@ const ShowComponents: FunctionComponent = () => {
       <br />
       <br />
       <br />
+      <span>hello</span>
       <Slider defaultValue={10} range={100} />
     </>
   );
