@@ -22,11 +22,20 @@ interface BaseSelectProps {
   className?: string;
   size?: number;
   icon?: ReactElement;
+  name?: string;
+  id?: string;
 }
 
 export type SelectProps = Partial<SelectHTMLAttributes<HTMLSelectElement> & BaseSelectProps>;
 
-const Select: FunctionComponent<SelectProps> = ({ className, icon, size, children }) => {
+const Select: FunctionComponent<SelectProps> = ({
+  className,
+  icon,
+  size,
+  name = 'select',
+  id,
+  children,
+}) => {
   const [showList, setShow] = useState(false);
 
   const selected = useSelector(
@@ -81,6 +90,8 @@ const Select: FunctionComponent<SelectProps> = ({ className, icon, size, childre
           onChange={(e) => {}}
           icon={icon}
           size={size}
+          name={name}
+          id={id}
           onFocus={() => {
             setShow(true);
           }}

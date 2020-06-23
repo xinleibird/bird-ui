@@ -27,7 +27,7 @@ const Autocomplete: FunctionComponent<AutocompleteProps> = ({
   size = 40,
   inputSize,
   onKeyPress,
-  name,
+  name = 'autocomplete',
   id,
 }) => {
   const classes = cxs(`${prefix}-autocomplete`, className);

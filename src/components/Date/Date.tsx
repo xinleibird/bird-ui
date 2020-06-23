@@ -15,9 +15,11 @@ import reducers, { DateStateType } from './store/reducers';
 export interface DateProps {
   className?: string;
   size?: number;
+  name?: string;
+  id?: string;
 }
 
-const LDate: FunctionComponent<DateProps> = ({ className, size }) => {
+const LDate: FunctionComponent<DateProps> = ({ className, size, name = 'date', id }) => {
   const [isValid, setValid] = useState(true);
 
   const [pickerIsVisiable, setPickerVisiable] = useState(false);
@@ -58,6 +60,8 @@ const LDate: FunctionComponent<DateProps> = ({ className, size }) => {
           type="input"
           size={size}
           className={inputCls}
+          name={name}
+          id={id}
           value={dateString}
           onInput={(e) => {
             const tar = e.target as EventTarget & HTMLInputElement;

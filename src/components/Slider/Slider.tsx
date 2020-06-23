@@ -63,18 +63,16 @@ const Slider: FunctionComponent<SliderProps> = ({
     };
 
     const mouseUpHandler = () => {
-      return (e: MouseEvent | TouchEvent) => {
+      return (e: MouseEvent) => {
         thumbClick.current = false;
       };
     };
 
     document.addEventListener('mousemove', mouseMoveHandler());
     document.addEventListener('mouseup', mouseUpHandler());
-    document.addEventListener('touchend', mouseUpHandler());
     return () => {
       document.removeEventListener('mousemove', mouseMoveHandler);
-      document.removeEventListener('mouseup', mouseMoveHandler);
-      document.removeEventListener('touchend', mouseMoveHandler);
+      document.removeEventListener('mouseup', mouseUpHandler);
     };
   }, [range, width]);
 
