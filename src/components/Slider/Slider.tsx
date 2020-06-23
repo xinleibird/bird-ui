@@ -70,9 +70,11 @@ const Slider: FunctionComponent<SliderProps> = ({
 
     document.addEventListener('mousemove', mouseMoveHandler());
     document.addEventListener('mouseup', mouseUpHandler());
+    document.addEventListener('dragend', mouseUpHandler());
     return () => {
       document.removeEventListener('mousemove', mouseMoveHandler);
       document.removeEventListener('mouseup', mouseMoveHandler);
+      document.removeEventListener('dragend', mouseMoveHandler);
     };
   }, [range, width]);
 
@@ -113,6 +115,10 @@ const Slider: FunctionComponent<SliderProps> = ({
             thumbRef.current = ref;
           }}
           onMouseDown={(e) => {
+            e.preventDefault();
+            thumbClick.current = true;
+          }}
+          onDragStart={(e) => {
             e.preventDefault();
             thumbClick.current = true;
           }}
