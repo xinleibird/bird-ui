@@ -118,10 +118,6 @@ const Slider: FunctionComponent<SliderProps> = ({
             e.preventDefault();
             thumbClick.current = true;
           }}
-          onTouchStart={(e) => {
-            e.preventDefault();
-            thumbClick.current = true;
-          }}
         />
         <input type="hidden" name={name} id={id} value={sliderValue.inputValue} />
       </span>
