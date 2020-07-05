@@ -16,7 +16,7 @@ export default () => {
     <>
       <Alert message="Warnning, this is a Warning" />
       <Alert type="info" message="Warnning, this is a Warning" />
-      <Alert type="waring" message="Warnning, this is a Warning" />
+      <Alert type="warning" message="Warnning, this is a Warning" />
       <Alert type="error" message="Warnning, this is a Warning" />
     </>
   );
